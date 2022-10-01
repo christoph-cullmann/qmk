@@ -149,39 +149,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ----------------------------------
  */
 
-const rgblight_segment_t PROGMEM game_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {2, 2, HSV_RED},
-    {6, 2, HSV_RED}
-);
-
-const rgblight_segment_t PROGMEM raise_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {3, 4, HSV_GREEN}
+const rgblight_segment_t PROGMEM qwerty_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {1, 8, HSV_WHITE}
 );
 
 const rgblight_segment_t PROGMEM lower_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {3, 4, HSV_BLUE}
-);
-
-const rgblight_segment_t PROGMEM adjust_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {1, 8, HSV_BLUE}
 );
 
-const rgblight_segment_t PROGMEM capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 1, HSV_WHITE},
-    {8, 1, HSV_WHITE}
+const rgblight_segment_t PROGMEM raise_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {1, 8, HSV_YELLOW}
 );
 
-const rgblight_segment_t PROGMEM numlock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {6, 2, HSV_PURPLE}
+const rgblight_segment_t PROGMEM nav_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {1, 8, HSV_WHITE}
+);
+
+const rgblight_segment_t PROGMEM cmd_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {1, 8, HSV_GREEN}
+);
+
+const rgblight_segment_t PROGMEM fn_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {1, 8, HSV_RED}
 );
 
 const rgblight_segment_t * const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
-    [_QWERTY] = game_layer,
+    [_QWERTY] = qwerty_layer,
     [_LOWER] = lower_layer,
     [_RAISE] = raise_layer,
-    [_NAV] = adjust_layer,
-    [_CMD] = capslock_layer,
-    [_FN] = numlock_layer
+    [_NAV] = nav_layer,
+    [_CMD] = cmd_layer,
+    [_FN] = fn_layer
 );
 
 void keyboard_post_init_user(void) {
