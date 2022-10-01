@@ -16,11 +16,24 @@
 
 #pragma once
 
+// not more than 8 layers
+#define LAYER_STATE_8BIT
+
 // ensure home row modifiers don't cause havoc
 #define IGNORE_MOD_TAP_INTERRUPT
 
 // normal startup sound
 #define STARTUP_SONG SONG(PLANCK_SOUND)
+
+// no music mode used
+#define NO_MUSIC_MODE
+
+// we don't need locking
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
+
+// we don't use one shot keys
+#define NO_ACTION_ONESHOT
 
 // no lights if we sleep
 #define RGBLIGHT_SLEEP
