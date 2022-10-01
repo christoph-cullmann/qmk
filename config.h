@@ -52,3 +52,6 @@
 #define RGBLIGHT_EFFECT_SNAKE
 #define RGBLIGHT_EFFECT_STATIC_GRADIENT
 #define RGBLIGHT_EFFECT_TWINKLE
+
+// we want to have different backlight per layers
+#define RGBLIGHT_LAYERS
