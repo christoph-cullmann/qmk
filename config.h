@@ -22,6 +22,9 @@
 // ensure home row modifiers don't cause havoc
 #define IGNORE_MOD_TAP_INTERRUPT
 
+// fix startup sound
+#define AUDIO_INIT_DELAY
+
 // normal startup sound
 #define STARTUP_SONG SONG(PLANCK_SOUND)
 
