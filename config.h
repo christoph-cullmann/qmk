@@ -22,7 +22,6 @@
 // ensure home row modifiers don't cause havoc
 #define IGNORE_MOD_TAP_INTERRUPT
 #define TAPPING_FORCE_HOLD
-#define PERMISSIVE_HOLD
 
 // fix startup sound
 #define AUDIO_INIT_DELAY
