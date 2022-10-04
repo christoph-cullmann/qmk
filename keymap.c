@@ -30,31 +30,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
  * ,-----------------------------------------------------------------------------------.
- * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
+ * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Esc |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Esc  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  '   |
+ * | Ctrl |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  '   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
+ * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl |  GUI |  Alt | Cmd  |      |Space |     |Enter  |  Fn  |  Alt |  GUI | Ctrl |
+ * | Ctrl |  GUI |  Alt | Cmd  |      |Space |     | Bksp  |  Fn  |  Alt |  GUI | Ctrl |
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_grid(
-    KC_TAB,  KC_Q,    KC_W,    KC_E,     KC_R,    KC_T,    KC_Y,    KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC,
-    LCTL_T(KC_ESC),  KC_A,    RALT_T(KC_S),    LALT_T(KC_D),     LSFT_T(KC_F),    LGUI_T(KC_G),    RGUI_T(KC_H),    RSFT_T(KC_J),   LALT_T(KC_K),    RALT_T(KC_L),    LT(_NAV, KC_SCLN),     RCTL_T(KC_QUOT),
-    KC_LSFT,  KC_Z,    KC_X,    KC_C,     KC_V,    KC_B,    KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_SLSH,  KC_RSFT,
-    KC_LCTL, KC_LGUI, KC_LALT, MO(_CMD),   XXXXXXX,  LT(_LOWER, KC_SPC),    XXXXXXX,   LT(_RAISE, KC_ENT),   MO(_FN),   KC_RALT, KC_RGUI, KC_RCTL
+    KC_TAB,  KC_Q,    KC_W,    KC_E,     KC_R,    KC_T,    KC_Y,    KC_U,   KC_I,    KC_O,    KC_P,    KC_ESC,
+    KC_LCTL,  KC_A,    RALT_T(KC_S),    LALT_T(KC_D),     LSFT_T(KC_F),    LGUI_T(KC_G),    RGUI_T(KC_H),    RSFT_T(KC_J),   LALT_T(KC_K),    RALT_T(KC_L),    LT(_NAV, KC_SCLN),     RCTL_T(KC_QUOT),
+    KC_LSFT,  KC_Z,    KC_X,    KC_C,     KC_V,    KC_B,    KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_SLSH,  KC_ENT,
+    KC_LCTL, KC_LGUI, KC_LALT, MO(_CMD),   XXXXXXX,  LT(_LOWER, KC_SPC),    XXXXXXX,   LT(_RAISE, KC_BSPC),   MO(_FN),   KC_RALT, KC_RGUI, KC_RCTL
 ),
 
 /* Lower
  * ,-----------------------------------------------------------------------------------.
- * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  | Bksp |
+ * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   _  |   +  |   {  |   }  |  |   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO ~ |ISO | | Home | End  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
@@ -66,13 +66,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Raise
  * ,-----------------------------------------------------------------------------------.
- * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
+ * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   -  |   =  |   [  |   ]  |  \   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO # |ISO / |Pg Up |Pg Dn |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_planck_grid(
@@ -132,9 +132,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_FN] = LAYOUT_planck_grid(
-    _______, _______, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, _______, _______,
-    QK_BOOT, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,  QK_RBT,
+    _______, _______, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, _______, QK_BOOT,
     _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,  QK_RBT,
     _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
 )
 
