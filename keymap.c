@@ -40,10 +40,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_grid(
-    KC_TAB,  KC_Q,    KC_W,    KC_E,     KC_R,    KC_T,    KC_Y,    KC_U,   KC_I,    KC_O,    KC_P,    KC_ESC,
+    KC_TAB,  KC_Q,    KC_W,    KC_E,     KC_R,    KC_T,    KC_Y,    KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC,
     KC_LCTL,  KC_A,    RALT_T(KC_S),    LALT_T(KC_D),     LSFT_T(KC_F),    LGUI_T(KC_G),    RGUI_T(KC_H),    RSFT_T(KC_J),   LALT_T(KC_K),    RALT_T(KC_L),    LT(_NAV, KC_SCLN),     RCTL_T(KC_QUOT),
-    KC_LSFT,  KC_Z,    KC_X,    KC_C,     KC_V,    KC_B,    KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_SLSH,  KC_ENT,
-    KC_LCTL, KC_LGUI, KC_LALT, MO(_CMD),   XXXXXXX,  LT(_LOWER, KC_SPC),    XXXXXXX,   LT(_RAISE, KC_BSPC),   MO(_FN),   KC_RALT, KC_RGUI, KC_RCTL
+    LSFT_T(KC_ESC),  KC_Z,    KC_X,    KC_C,     KC_V,    KC_B,    KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_SLSH,  RSFT_T(KC_ESC),
+    KC_LCTL, KC_LGUI, KC_LALT, MO(_CMD),   MO(_LOWER),  KC_SPC,    KC_ENT,   MO(_RAISE),   MO(_FN),   KC_RALT, KC_RGUI, KC_RCTL
 ),
 
 /* Lower
@@ -122,9 +122,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Function layer
  *               v------------------------RGB CONTROL--------------------v
  * ,-----------------------------------------------------------------------------------.
- * |      |      | RGB  |RGBMOD| HUE+ | HUE- | SAT+ | SAT- |BRGTH+|BRGTH-|      |      |
+ * | Boot |      | RGB  |RGBMOD| HUE+ | HUE- | SAT+ | SAT- |BRGTH+|BRGTH-|      |Reboot|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Boot |      |      |      |      |             |      |      |      |      |Reboot|
+ * |      |      |      |      |      |             |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -132,9 +132,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_FN] = LAYOUT_planck_grid(
-    _______, _______, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, _______, QK_BOOT,
+    QK_BOOT, _______, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, _______,  QK_RBT,
     _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,  QK_RBT,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
 )
 
