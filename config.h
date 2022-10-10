@@ -1,4 +1,4 @@
-/* Copyright 2015-2021 Jack Humbert
+/* Copyright 2022 Christoph Cullmann
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,8 +22,14 @@
 // settings for home row modifiers
 // details see https://precondition.github.io/home-row-mods
 
-// Configure the global tapping term (default: 200ms)
-#define TAPPING_TERM 200
+// allow per key changes of tapping term, home row uses longer delay
+#define TAPPING_TERM_PER_KEY
+
+// configure the global tapping term
+#define TAPPING_TERM 150
+
+// home row tapping term, longer to avoid strange thing from happening
+#define TAPPING_TERM_HOME_ROW 250
 
 // Prevent normal rollover on alphas from accidentally triggering mods.
 #define IGNORE_MOD_TAP_INTERRUPT

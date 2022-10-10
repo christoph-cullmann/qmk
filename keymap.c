@@ -1,4 +1,4 @@
-/* Copyright 2015-2021 Jack Humbert
+/* Copyright 2022 Christoph Cullmann
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_QWERTY] = LAYOUT_planck_grid(
     KC_TAB,  KC_Q,    KC_W,    KC_E,     KC_R,    KC_T,    KC_Y,    KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC,
-    LCTL_T(KC_ESC),  LT(_NAV, KC_A),    RALT_T(KC_S),    LALT_T(KC_D),     LSFT_T(KC_F),    KC_G,    KC_H,    RSFT_T(KC_J),   LALT_T(KC_K),    RALT_T(KC_L),    LT(_NAV, KC_SCLN),     RCTL_T(KC_QUOT),
+    LCTL_T(KC_ESC),  KC_A,    RALT_T(KC_S),    LALT_T(KC_D),     LSFT_T(KC_F),    KC_G,    KC_H,    RSFT_T(KC_J),   LALT_T(KC_K),    RALT_T(KC_L),    LT(_NAV, KC_SCLN),     RCTL_T(KC_QUOT),
     KC_LSFT,  KC_Z,    KC_X,    KC_C,     KC_V,    KC_B,    KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_SLSH,  RSFT_T(KC_ENT),
     KC_LCTL, KC_LGUI, KC_LALT, MO(_CMD),   MO(_LOWER),  KC_SPC,    KC_ENT,   MO(_RAISE),   MO(_FN),   KC_RALT, KC_RGUI, KC_RCTL
 ),
@@ -140,6 +140,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+// per-key tapping term
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case RALT_T(KC_S):
+        case LALT_T(KC_D):
+        case LSFT_T(KC_F):
+        case RSFT_T(KC_J):
+        case LALT_T(KC_K):
+        case RALT_T(KC_L):
+            return TAPPING_TERM_HOME_ROW;
+        default:
+            return TAPPING_TERM;
+    }
+}
 
 /* plwnck rev6 RGB layout:
  * ----------------------------------
