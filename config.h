@@ -37,6 +37,9 @@
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define TAPPING_FORCE_HOLD
 
+// try to be more permissive with holds, allows to trigger modifiers fasters
+#define PERMISSIVE_HOLD
+
 // fix startup sound
 #define AUDIO_INIT_DELAY
 
