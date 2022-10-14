@@ -2,9 +2,7 @@
 
 Derived from the default layout.
 
-Lower and raise layer like in default.
-
-QWERTY layer has home row modifiers.
+Lower and raise layer mostly like in the default layout.
 
 NAV layer with reverse-T cursors.
 

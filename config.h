@@ -19,7 +19,7 @@
 // not more than 8 layers
 #define LAYER_STATE_8BIT
 
-// try to be more permissive with holds, allows to trigger modifiers fasters
+// try to be more permissive with holds, allows to trigger modifiers faster
 #define PERMISSIVE_HOLD
 
 // fix startup sound
