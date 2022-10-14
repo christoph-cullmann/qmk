@@ -34,16 +34,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Ctrl |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  '   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Enter |
+ * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl |  GUI |  Alt | Cmd  |      |Space |     | Bksp  |  Fn  |  Alt |  GUI | Ctrl |
+ * | Ctrl |  GUI |  Cmd |  Alt |      |Space |     | Bksp  |  Alt |  Fn  |  GUI | Ctrl |
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_grid(
     KC_TAB,  KC_Q,    KC_W,    KC_E,     KC_R,    KC_T,    KC_Y,    KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC,
-    LCTL_T(KC_ESC),  KC_A,    RALT_T(KC_S),    LALT_T(KC_D),     LSFT_T(KC_F),    KC_G,    KC_H,    RSFT_T(KC_J),   LALT_T(KC_K),    RALT_T(KC_L),    LT(_NAV, KC_SCLN),     RCTL_T(KC_QUOT),
-    KC_LSFT,  KC_Z,    KC_X,    KC_C,     KC_V,    KC_B,    KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_SLSH,  RSFT_T(KC_ENT),
-    KC_LCTL, KC_LGUI, KC_LALT, MO(_CMD),   MO(_LOWER),  KC_SPC,    KC_ENT,   MO(_RAISE),   MO(_FN),   KC_RALT, KC_RGUI, KC_RCTL
+    LCTL_T(KC_ESC),  KC_A,  KC_S, KC_D,  KC_F,    KC_G,    KC_H,  KC_J,   KC_K,    KC_L,    LT(_NAV, KC_SCLN),     RCTL_T(KC_QUOT),
+    KC_LSFT,  KC_Z,    KC_X,    KC_C,     KC_V,    KC_B,    KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_SLSH,  KC_RSFT,
+    KC_LCTL, KC_LGUI,  MO(_CMD),  KC_LALT, MO(_LOWER),  KC_SPC,    KC_ENT,   MO(_RAISE),   KC_RALT, MO(_FN),   KC_RGUI, KC_RCTL
 ),
 
 /* Lower
@@ -139,21 +139,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 )
 
 };
-
-// per-key tapping term
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case RALT_T(KC_S):
-        case LALT_T(KC_D):
-        case LSFT_T(KC_F):
-        case RSFT_T(KC_J):
-        case LALT_T(KC_K):
-        case RALT_T(KC_L):
-            return TAPPING_TERM_HOME_ROW;
-        default:
-            return TAPPING_TERM;
-    }
-}
 
 /* plwnck rev6 RGB layout:
  * ----------------------------------
