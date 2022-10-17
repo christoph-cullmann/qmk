@@ -64,6 +64,40 @@ KC_NO, KC_NO, K32,   K33,   K34,   KC_NO, KC_NO, K35,   K36,   K37,   KC_NO, KC_
 #include <users/manna-harbour_miryoku/manna-harbour_miryoku.c>
 
 //
+// improve home row modifiers via achordion
+//
+
+#include "achordion.h"
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record)
+{
+    if (!process_achordion(keycode, record)) {
+        return false;
+    }
+
+    return true;
+}
+
+void matrix_scan_user(void)
+{
+    achordion_task();
+}
+
+bool achordion_chord(uint16_t tap_hold_keycode,
+                     keyrecord_t* tap_hold_record,
+                     uint16_t other_keycode,
+                     keyrecord_t* other_record)
+{
+    // allow thumb key row to always work
+    if (other_record->event.key.row >= 3) {
+        return true;
+    }
+
+    // Otherwise, follow the opposite hands rule.
+    return achordion_opposite_hands(tap_hold_record, other_record);
+}
+
+//
 // underglow configuration
 //
 
@@ -101,7 +135,7 @@ const rgblight_segment_t PROGMEM fn_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 
 const rgblight_segment_t * const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
   [BASE]   = qwerty_layer,
-  [NAV]    = lower_layer,
+  [NAV]    = cmd_layer,
   [MOUSE]  = raise_layer,
   [MEDIA]  = nav_layer,
   [NUM]    = cmd_layer,

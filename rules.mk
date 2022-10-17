@@ -11,6 +11,9 @@ AUTO_SHIFT_ENABLE = yes # Auto Shift
 include users/manna-harbour_miryoku/custom_rules.mk
 include users/manna-harbour_miryoku/post_rules.mk
 
+# add achordion to improve home row modifiers
+SRC += achordion.c
+
 # properly optimize
 LTO_ENABLE = yes
 

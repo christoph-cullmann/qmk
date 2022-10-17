@@ -20,6 +20,14 @@
 #include <users/manna-harbour_miryoku/config.h>
 
 //
+// improve home row modifiers via achoridion
+//
+
+// try to be more permissive with holds, allows to trigger modifiers faster
+// achordion will avoid the worst
+#define PERMISSIVE_HOLD
+
+//
 // audio configuration
 //
 
