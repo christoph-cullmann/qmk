@@ -29,6 +29,9 @@
 // normal startup sound
 #define STARTUP_SONG SONG(PLANCK_SOUND)
 
+// no music mode used
+#define NO_MUSIC_MODE
+
 //
 // underglow configuration
 //
@@ -60,9 +63,6 @@
 
 // normal startup sound
 #define STARTUP_SONG SONG(PLANCK_SOUND)
-
-// no music mode used
-#define NO_MUSIC_MODE
 
 // we don't need locking
 #undef LOCKING_SUPPORT_ENABLE
