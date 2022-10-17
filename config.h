@@ -62,15 +62,9 @@
 // we want to have different backlight per layers
 #define RGBLIGHT_LAYERS
 
-#if 0
-// try to be more permissive with holds, allows to trigger modifiers faster
-#define PERMISSIVE_HOLD
-
-// fix startup sound
-#define AUDIO_INIT_DELAY
-
-// normal startup sound
-#define STARTUP_SONG SONG(PLANCK_SOUND)
+//
+// remove some features we don't need
+//
 
 // we don't need locking
 #undef LOCKING_SUPPORT_ENABLE
@@ -78,4 +72,3 @@
 
 // we don't use one shot keys
 #define NO_ACTION_ONESHOT
-#endif
