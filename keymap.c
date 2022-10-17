@@ -16,129 +16,56 @@
 
 #include QMK_KEYBOARD_H
 
-// our layers, used as index in layers and rgb lights
-enum planck_layers {
-  _QWERTY,
-  _LOWER,
-  _RAISE,
-  _NAV,
-  _CMD,
-  _FN
-};
+// map miryoku to our 4x12 grid
+// we setup some extra keys in the holes
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
-/* Qwerty
- * ,-----------------------------------------------------------------------------------.
- * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  '   |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl |  GUI |  Cmd |  Alt |      |Space |     | Bksp  |  Alt |  Fn  |  GUI | Ctrl |
- * `-----------------------------------------------------------------------------------'
- */
-[_QWERTY] = LAYOUT_planck_grid(
-    KC_TAB,  KC_Q,    KC_W,    KC_E,     KC_R,    KC_T,    KC_Y,    KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC,
-    LCTL_T(KC_ESC),  KC_A,  KC_S, KC_D,  KC_F,    KC_G,    KC_H,  KC_J,   KC_K,    KC_L,    LT(_NAV, KC_SCLN),     RCTL_T(KC_QUOT),
-    KC_LSFT,  KC_Z,    KC_X,    KC_C,     KC_V,    KC_B,    KC_N,    KC_M,   KC_COMM, KC_DOT,  KC_SLSH,  KC_RSFT,
-    KC_LCTL, KC_LGUI,  MO(_CMD),  KC_LALT, MO(_LOWER),  KC_SPC,    KC_ENT,   MO(_RAISE),   KC_RALT, MO(_FN),   KC_RGUI, KC_RCTL
-),
-
-/* Lower
- * ,-----------------------------------------------------------------------------------.
- * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   _  |   +  |   {  |   }  |  |   |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO ~ |ISO | | Home | End  |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
-[_LOWER] = LAYOUT_planck_grid(
-    KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, _______,
-    KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_UNDS,    KC_PLUS,    KC_LCBR, KC_RCBR, KC_PIPE,
-    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  S(KC_NUHS), S(KC_NUBS), KC_HOME, KC_END,  _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-),
-
-/* Raise
- * ,-----------------------------------------------------------------------------------.
- * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   -  |   =  |   [  |   ]  |  \   |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO # |ISO / |Pg Up |Pg Dn |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
-[_RAISE] = LAYOUT_planck_grid(
-    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
-    KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
-    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NUHS, KC_NUBS, KC_PGUP, KC_PGDN, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-),
-
-/* Navigation layer
- * ,-----------------------------------------------------------------------------------.
- * |      |      |      |      |      |      |      |      |  Up  |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      | Home | PgUp | PgDn | End  |      |      | Left | Down | Right|      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
-[_NAV] = LAYOUT_planck_grid(
-    _______, _______, _______, _______, _______, _______, _______, _______,   KC_UP, _______, _______, _______,
-    _______, KC_HOME, KC_PGUP, KC_PGDN,  KC_END, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-),
-
-/* Command layer
- * ,-----------------------------------------------------------------------------------.
- * |      |      |      |      |      |             |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |Print |      |      |      |      |             |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
-[_CMD] = LAYOUT_planck_grid(
-    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______,
-    KC_PSCR, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
-),
-
-/*
- * Function layer
- *               v------------------------RGB CONTROL--------------------v
- * ,-----------------------------------------------------------------------------------.
- * | Boot |      | RGB  |RGBMOD| HUE+ | HUE- | SAT+ | SAT- |BRGTH+|BRGTH-|      |Reboot|
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
-[_FN] = LAYOUT_planck_grid(
-    QK_BOOT, _______, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, _______,  QK_RBT,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
+#if defined MIRYOKU_MAPPING_SPLIT
+#define LAYOUT_miryoku(\
+K00,   K01,   K02,   K03,   K04,                 K05,   K06,   K07,   K08,   K09,\
+K10,   K11,   K12,   K13,   K14,                 K15,   K16,   K17,   K18,   K19,\
+K20,   K21,   K22,   K23,   K24,                 K25,   K26,   K27,   K28,   K29,\
+N30,   N31,   K32,   K33,   K34,                 K35,   K36,   K37,   N38,   N39\
+)\
+LAYOUT_ortho_4x12(\
+KC_NO, K01,   K02,   K03,   K04,   KC_NO, KC_NO, K05,   K06,   K07,   K08,   KC_NO,\
+K00,   K11,   K12,   K13,   K14,   KC_NO, KC_NO, K15,   K16,   K17,   K18,   K09,\
+K10,   K21,   K22,   K23,   K24,   KC_NO, KC_NO, K25,   K26,   K27,   K28,   K19,\
+K20,   KC_NO, KC_NO, K32,   K33,   K34,   K35,   K36,   K37,   KC_NO, KC_NO, K29\
 )
+#elif defined MIRYOKU_MAPPING_EXTENDED_THUMBS
+#define LAYOUT_miryoku(\
+K00,   K01,   K02,   K03,   K04,                 K05,   K06,   K07,   K08,   K09,\
+K10,   K11,   K12,   K13,   K14,                 K15,   K16,   K17,   K18,   K19,\
+K20,   K21,   K22,   K23,   K24,                 K25,   K26,   K27,   K28,   K29,\
+N30,   N31,   K32,   K33,   K34,                 K35,   K36,   K37,   N38,   N39\
+)\
+LAYOUT_ortho_4x12(\
+K00,   K01,   K02,   K03,   K04,   KC_NO, KC_NO, K05,   K06,   K07,   K08,   K09,\
+K10,   K11,   K12,   K13,   K14,   KC_NO, KC_NO, K15,   K16,   K17,   K18,   K19,\
+K20,   K21,   K22,   K23,   K24,   KC_NO, KC_NO, K25,   K26,   K27,   K28,   K29,\
+KC_NO, KC_NO, KC_NO, K32,   K33,   K34,   K35,   K36,   K37,   KC_NO, KC_NO, KC_NO\
+)
+#else
+#define LAYOUT_miryoku(\
+K00,   K01,   K02,   K03,   K04,                 K05,   K06,   K07,   K08,   K09,\
+K10,   K11,   K12,   K13,   K14,                 K15,   K16,   K17,   K18,   K19,\
+K20,   K21,   K22,   K23,   K24,                 K25,   K26,   K27,   K28,   K29,\
+N30,   N31,   K32,   K33,   K34,                 K35,   K36,   K37,   N38,   N39\
+)\
+LAYOUT_ortho_4x12(\
+K00,   K01,   K02,   K03,   K04,   KC_NO, KC_NO, K05,   K06,   K07,   K08,   K09,\
+K10,   K11,   K12,   K13,   K14,   KC_NO, KC_NO, K15,   K16,   K17,   K18,   K19,\
+K20,   K21,   K22,   K23,   K24,   KC_NO, KC_NO, K25,   K26,   K27,   K28,   K29,\
+KC_NO, KC_NO, K32,   K33,   K34,   KC_NO, KC_NO, K35,   K36,   K37,   KC_NO, KC_NO\
+)
+#endif
 
-};
+// include miryoku defaults
+#include <users/manna-harbour_miryoku/manna-harbour_miryoku.c>
+
+//
+// underglow configuration
+//
 
 /* plwnck rev6 RGB layout:
  * ----------------------------------
@@ -173,25 +100,30 @@ const rgblight_segment_t PROGMEM fn_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 );
 
 const rgblight_segment_t * const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
-    [_QWERTY] = qwerty_layer,
-    [_LOWER] = lower_layer,
-    [_RAISE] = raise_layer,
-    [_NAV] = nav_layer,
-    [_CMD] = cmd_layer,
-    [_FN] = fn_layer
+  [BASE]   = qwerty_layer,
+  [NAV]    = lower_layer,
+  [MOUSE]  = raise_layer,
+  [MEDIA]  = nav_layer,
+  [NUM]    = cmd_layer,
+  [SYM]    = fn_layer,
+  [FUN]    = nav_layer,
+  [BUTTON] = raise_layer
 );
 
-void keyboard_post_init_user(void) {
+void keyboard_post_init_user(void)
+{
     // Enable the LED layers
     rgblight_layers = my_rgb_layers;
 }
 
 layer_state_t layer_state_set_user(layer_state_t state)
 {
-    rgblight_set_layer_state(_LOWER, layer_state_cmp(state, _LOWER));
-    rgblight_set_layer_state(_RAISE, layer_state_cmp(state, _RAISE));
-    rgblight_set_layer_state(_NAV, layer_state_cmp(state, _NAV));
-    rgblight_set_layer_state(_CMD, layer_state_cmp(state, _CMD));
-    rgblight_set_layer_state(_FN, layer_state_cmp(state, _FN));
+    rgblight_set_layer_state(NAV, layer_state_cmp(state, NAV));
+    rgblight_set_layer_state(MOUSE, layer_state_cmp(state, MOUSE));
+    rgblight_set_layer_state(MEDIA, layer_state_cmp(state, MEDIA));
+    rgblight_set_layer_state(NUM, layer_state_cmp(state, NUM));
+    rgblight_set_layer_state(SYM, layer_state_cmp(state, SYM));
+    rgblight_set_layer_state(FUN, layer_state_cmp(state, FUN));
+    rgblight_set_layer_state(BUTTON, layer_state_cmp(state, BUTTON));
     return state;
 }

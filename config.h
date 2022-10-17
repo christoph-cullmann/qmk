@@ -16,11 +16,12 @@
 
 #pragma once
 
-// not more than 8 layers
-#define LAYER_STATE_8BIT
+// include miryoku defaults
+#include <users/manna-harbour_miryoku/config.h>
 
-// try to be more permissive with holds, allows to trigger modifiers faster
-#define PERMISSIVE_HOLD
+//
+// audio configuration
+//
 
 // fix startup sound
 #define AUDIO_INIT_DELAY
@@ -28,15 +29,9 @@
 // normal startup sound
 #define STARTUP_SONG SONG(PLANCK_SOUND)
 
-// no music mode used
-#define NO_MUSIC_MODE
-
-// we don't need locking
-#undef LOCKING_SUPPORT_ENABLE
-#undef LOCKING_RESYNC_ENABLE
-
-// we don't use one shot keys
-#define NO_ACTION_ONESHOT
+//
+// underglow configuration
+//
 
 // no lights if we sleep
 #define RGBLIGHT_SLEEP
@@ -55,3 +50,24 @@
 
 // we want to have different backlight per layers
 #define RGBLIGHT_LAYERS
+
+#if 0
+// try to be more permissive with holds, allows to trigger modifiers faster
+#define PERMISSIVE_HOLD
+
+// fix startup sound
+#define AUDIO_INIT_DELAY
+
+// normal startup sound
+#define STARTUP_SONG SONG(PLANCK_SOUND)
+
+// no music mode used
+#define NO_MUSIC_MODE
+
+// we don't need locking
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
+
+// we don't use one shot keys
+#define NO_ACTION_ONESHOT
+#endif
