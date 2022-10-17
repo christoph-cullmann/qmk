@@ -83,18 +83,33 @@ void matrix_scan_user(void)
     achordion_task();
 }
 
+static bool planck_bottom_row(keypos_t pos)
+{
+    return pos.row % (MATRIX_ROWS / 2) == 3;
+}
+
+// works only for rows 0-2 or 4-6
+static bool planck_on_left_hand(keypos_t pos)
+{
+    // planck is like a split keyboard, beside for the last row
+    return pos.row < MATRIX_ROWS / 2;
+}
+
 bool achordion_chord(uint16_t tap_hold_keycode,
                      keyrecord_t* tap_hold_record,
                      uint16_t other_keycode,
                      keyrecord_t* other_record)
 {
-    // allow thumb key row to always work
-    if (other_record->event.key.row >= 3) {
+    // last row is special for the planck, just allow there everything
+    if (planck_bottom_row(tap_hold_record->event.key)) {
+        return true;
+    }
+    if (planck_bottom_row(other_record->event.key)) {
         return true;
     }
 
-    // Otherwise, follow the opposite hands rule.
-    return achordion_opposite_hands(tap_hold_record, other_record);
+    // now both keys are in rows 0-2 or 4-6, there we can check the left hand with the simple helper
+    return planck_on_left_hand(tap_hold_record->event.key) != planck_on_left_hand(other_record->event.key);
 }
 
 //
