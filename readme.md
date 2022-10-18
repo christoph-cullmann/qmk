@@ -1,6 +1,8 @@
 # Christoph Cullmann's Layout
 
-Derived from the Miryoku layout.
+32 key layout
+
+Derived from the standard Planck layout and ideas from the Miryoku layout.
 
 https://github.com/manna-harbour/miryoku
 

@@ -16,12 +16,21 @@
 
 #pragma once
 
-// include miryoku defaults
-#include <users/manna-harbour_miryoku/config.h>
-
 //
 // improve home row modifiers via achoridion
 //
+
+// settings for home row modifiers
+// details see https://precondition.github.io/home-row-mods
+
+// configure the global tapping term
+#define TAPPING_TERM 250
+
+// Prevent normal rollover on alphas from accidentally triggering mods.
+#define IGNORE_MOD_TAP_INTERRUPT
+
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
+#define TAPPING_FORCE_HOLD
 
 // try to be more permissive with holds, allows to trigger modifiers faster
 // achordion will avoid the worst
@@ -65,6 +74,9 @@
 //
 // remove some features we don't need
 //
+
+// not more than 8 layers
+#define LAYER_STATE_8BIT
 
 // we don't need locking
 #undef LOCKING_SUPPORT_ENABLE
