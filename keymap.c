@@ -86,15 +86,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_NUM] = LAYOUT_planck_grid(
     KC_ESC,       XXXXXXX,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX,         KC_MINS,           KC_EQL,       KC_BSLS,        KC_GRV,
-    LGUI_T(KC_1), LALT_T(KC_2), LCTL_T(KC_3), LSFT_T(KC_4),     KC_5,             XXXXXXX, XXXXXXX, KC_6,            RSFT_T(KC_7),      RCTL_T(KC_8), LALT_T(KC_9),   RGUI_T(KC_0),
-    XXXXXXX,      KC_RALT,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,           XXXXXXX,      KC_LBRC,        KC_RBRC,
+    KC_1,         KC_2,         KC_3,         KC_4,             KC_5,             XXXXXXX, XXXXXXX, KC_6,            KC_7,              KC_8,         KC_9,           KC_0,
+    XXXXXXX,      XXXXXXX,      KC_LALT,      KC_LCTL,          XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX,         KC_RCTL,           KC_LALT,      KC_LBRC,        KC_RBRC,
     XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_TAB,           KC_SPC,           XXXXXXX, XXXXXXX, KC_ENT,          KC_BSPC,           XXXXXXX,      XXXXXXX,        XXXXXXX
 ),
 
 [_SYM] = LAYOUT_planck_grid(
     KC_ESC,       XXXXXXX,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX,         KC_UNDS,           KC_PLUS,      KC_PIPE,        KC_TILD,
     KC_EXLM,      KC_AT,        KC_HASH,      KC_DLR,           KC_PERC,          XXXXXXX, XXXXXXX, KC_CIRC,         KC_AMPR,           KC_ASTR,      KC_LPRN,        KC_RPRN,
-    XXXXXXX,      KC_RALT,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,           XXXXXXX,      KC_LCBR,        KC_RCBR,
+    XXXXXXX,      XXXXXXX,      KC_LALT,      KC_LCTL,          XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX,         KC_RCTL,           KC_LALT,      KC_LCBR,        KC_RCBR,
     XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_TAB,           KC_SPC,           XXXXXXX, XXXXXXX, KC_ENT,          KC_BSPC,           XXXXXXX,      XXXXXXX,        XXXXXXX
 ),
 
