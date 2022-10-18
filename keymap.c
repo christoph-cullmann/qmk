@@ -103,14 +103,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F6,        KC_F7,        KC_F8,        KC_F9,            KC_F10,           XXXXXXX, XXXXXXX, XXXXXXX,         KC_RSFT,           KC_RCTL,      KC_LALT,        KC_RGUI,
     KC_F11,       KC_F12,       XXXXXXX,      XXXXXXX,          KC_PSCR,          XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,           XXXXXXX,      KC_RALT,        XXXXXXX,
     XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_TAB,           KC_SPC,           XXXXXXX, XXXXXXX, KC_ENT,          KC_BSPC,           XXXXXXX,      XXXXXXX,        XXXXXXX
-)
+),
 
 [_SYM] = LAYOUT_planck_grid(
     KC_EXLM,      KC_AT,        KC_HASH,      KC_DLR,           KC_PERC,          XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,           XXXXXXX,      XXXXXXX,        QK_BOOT,
     KC_CIRC,      KC_AMPR,      KC_ASTR,      KC_LPRN,          KC_RPRN,          XXXXXXX, XXXXXXX, XXXXXXX,         KC_RSFT,           KC_RCTL,      KC_LALT,        KC_RGUI,
     KC_UNDS,      KC_PLUS,      KC_PIPE,      KC_TILD,          KC_COLN,          XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,           XXXXXXX,      KC_RALT,        XXXXXXX,
     XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_TAB,           KC_SPC,           XXXXXXX, XXXXXXX, KC_ENT,          KC_BSPC,           XXXXXXX,      XXXXXXX,        XXXXXXX
-),
+)
 
 };
 
