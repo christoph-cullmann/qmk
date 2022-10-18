@@ -23,9 +23,6 @@
 // settings for home row modifiers
 // details see https://precondition.github.io/home-row-mods
 
-// configure the global tapping term
-#define TAPPING_TERM 250
-
 // Prevent normal rollover on alphas from accidentally triggering mods.
 #define IGNORE_MOD_TAP_INTERRUPT
 

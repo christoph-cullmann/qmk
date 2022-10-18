@@ -1,6 +1,6 @@
 # Christoph Cullmann's Layout
 
-34 key layout
+Layout with 34 keys
 
 Derived from the standard Planck layout and ideas from the Miryoku layout.
 
