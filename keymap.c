@@ -95,39 +95,32 @@ bool achordion_chord(uint16_t tap_hold_keycode,
  * ----------------------------------
  */
 
-const rgblight_segment_t PROGMEM qwerty_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+const rgblight_segment_t PROGMEM white_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {1, 8, HSV_WHITE}
 );
 
-const rgblight_segment_t PROGMEM lower_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+const rgblight_segment_t PROGMEM blue_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {1, 8, HSV_BLUE}
 );
 
-const rgblight_segment_t PROGMEM raise_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 8, HSV_YELLOW}
-);
-
-const rgblight_segment_t PROGMEM nav_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 8, HSV_WHITE}
-);
-
-const rgblight_segment_t PROGMEM cmd_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+const rgblight_segment_t PROGMEM green_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {1, 8, HSV_GREEN}
 );
 
-const rgblight_segment_t PROGMEM fn_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+const rgblight_segment_t PROGMEM red_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {1, 8, HSV_RED}
 );
 
+const rgblight_segment_t PROGMEM yellow_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {1, 8, HSV_YELLOW}
+);
+
 const rgblight_segment_t * const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
-  [BASE]   = qwerty_layer,
-  [NAV]    = cmd_layer,
-  [MOUSE]  = raise_layer,
-  [MEDIA]  = nav_layer,
-  [NUM]    = cmd_layer,
-  [SYM]    = fn_layer,
-  [FUN]    = nav_layer,
-  [BUTTON] = raise_layer
+  white_layer,
+  blue_layer,
+  green_layer,
+  red_layer,
+  yellow_layer
 );
 
 void keyboard_post_init_user(void)
@@ -138,12 +131,12 @@ void keyboard_post_init_user(void)
 
 layer_state_t layer_state_set_user(layer_state_t state)
 {
-    rgblight_set_layer_state(NAV, layer_state_cmp(state, NAV));
-    rgblight_set_layer_state(MOUSE, layer_state_cmp(state, MOUSE));
-    rgblight_set_layer_state(MEDIA, layer_state_cmp(state, MEDIA));
-    rgblight_set_layer_state(NUM, layer_state_cmp(state, NUM));
-    rgblight_set_layer_state(SYM, layer_state_cmp(state, SYM));
-    rgblight_set_layer_state(FUN, layer_state_cmp(state, FUN));
-    rgblight_set_layer_state(BUTTON, layer_state_cmp(state, BUTTON));
+    rgblight_set_layer_state(0, layer_state_cmp(state, NAV));
+    rgblight_set_layer_state(1, layer_state_cmp(state, NUM));
+    rgblight_set_layer_state(2, layer_state_cmp(state, SYM));
+    rgblight_set_layer_state(3, layer_state_cmp(state, FUN));
+    rgblight_set_layer_state(4, layer_state_cmp(state, MEDIA));
+    rgblight_set_layer_state(4, layer_state_cmp(state, MOUSE));
+    rgblight_set_layer_state(4, layer_state_cmp(state, BUTTON));
     return state;
 }
