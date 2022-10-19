@@ -85,15 +85,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_SYM] = LAYOUT_planck_grid(
     KC_ESC,       C(KC_X),      C(KC_C),      C(KC_V),          XXXXXXX,          XXXXXXX, XXXXXXX, KC_LCBR,         KC_AMPR,           KC_ASTR,      KC_LPRN,        KC_RCBR,
-    KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,          XXXXXXX,          XXXXXXX, XXXXXXX, KC_COLN,         KC_DLR,            KC_PERC,      KC_CIRC,        KC_PLUS,
-    XXXXXXX,      KC_RALT,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX, XXXXXXX, KC_TILD,         KC_EXLM,           KC_AT,        KC_HASH,        KC_PIPE,
+    KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,          XXXXXXX,          XXXXXXX, XXXXXXX, KC_PLUS,         KC_DLR,            KC_PERC,      KC_CIRC,        KC_COLN,
+    XXXXXXX,      KC_RALT,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX, XXXXXXX, KC_PIPE,         KC_EXLM,           KC_AT,        KC_HASH,        KC_TILD,
     XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_TAB,           KC_SPC,           XXXXXXX, XXXXXXX, KC_UNDS,         KC_RPRN,           XXXXXXX,      XXXXXXX,        XXXXXXX
 ),
 
 [_NUM] = LAYOUT_planck_grid(
     KC_ESC,       C(KC_X),      C(KC_C),      C(KC_V),          XXXXXXX,          XXXXXXX, XXXXXXX, KC_LBRC,         KC_7,              KC_8,         KC_9,           KC_RBRC,
-    KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,          XXXXXXX,          XXXXXXX, XXXXXXX, KC_SCLN,         KC_4,              KC_5,         KC_6,           KC_EQL,
-    XXXXXXX,      KC_RALT,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX, XXXXXXX, KC_GRV,          KC_1,              KC_2,         KC_3,           KC_BSLS,
+    KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,          XXXXXXX,          XXXXXXX, XXXXXXX, KC_EQL,          KC_4,              KC_5,         KC_6,           KC_SCLN,
+    XXXXXXX,      KC_RALT,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX, XXXXXXX, KC_BSLS,         KC_1,              KC_2,         KC_3,           KC_GRV,
     XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_TAB,           KC_SPC,           XXXXXXX, XXXXXXX, KC_MINS,         KC_0,              XXXXXXX,      XXXXXXX,        XXXXXXX
 ),
 
@@ -130,7 +130,7 @@ const rgblight_segment_t PROGMEM sym_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 );
 
 const rgblight_segment_t PROGMEM num_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 8, HSV_YELLOW}
+    {1, 8, HSV_GREEN}
 );
 
 const rgblight_segment_t PROGMEM fn_layer[] = RGBLIGHT_LAYER_SEGMENTS(
