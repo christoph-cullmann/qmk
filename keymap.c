@@ -113,15 +113,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_FN] = LAYOUT_cullmann(
     KC_F12,         KC_F7,        KC_F8,        KC_F9,            KC_PSCR,          XXXXXXX,         XXXXXXX,           XXXXXXX,         XXXXXXX,        QK_BOOT,
-    KC_F11,         KC_F4,        KC_F5,        KC_F6,            XXXXXXX,          XXXXXXX,         KC_RSFT,           KC_RCTL,         KC_LALT,        XXXXXXX,
-    KC_F10,         KC_F1,        KC_F2,        KC_F3,            XXXXXXX,          XXXXXXX,         XXXXXXX,           KC_RGUI,         KC_RALT,        XXXXXXX,
+    KC_F11,         KC_F4,        KC_F5,        KC_F6,            KC_DEL,           XXXXXXX,         KC_RSFT,           KC_RCTL,         KC_LALT,        XXXXXXX,
+    KC_F10,         KC_F1,        KC_F2,        KC_F3,            KC_INS,           XXXXXXX,         XXXXXXX,           KC_RGUI,         KC_RALT,        XXXXXXX,
                                                 KC_TAB,           KC_SPC,           KC_ENT,          KC_BSPC
 ),
 
 [_NAV] = LAYOUT_cullmann(
     KC_PGUP,        KC_HOME,      KC_UP,        KC_END,           KC_PGUP,          XXXXXXX,         XXXXXXX,           XXXXXXX,         XXXXXXX,        QK_BOOT,
     KC_PGDN,        KC_LEFT,      KC_DOWN,      KC_RGHT,          KC_PGDN,          XXXXXXX,         KC_RSFT,           KC_RCTL,         KC_LALT,        XXXXXXX,
-    XXXXXXX,        C(KC_X),      C(KC_C),      C(KC_V),          XXXXXXX,          XXXXXXX,         XXXXXXX,           KC_RGUI,         KC_RALT,        XXXXXXX,
+    XXXXXXX,        XXXXXXX,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX,         XXXXXXX,           KC_RGUI,         KC_RALT,        XXXXXXX,
                                                 KC_TAB,           KC_SPC,           KC_ENT,          KC_BSPC
 )
 
