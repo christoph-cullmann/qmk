@@ -23,8 +23,8 @@
 // settings for home row modifiers
 // details see https://precondition.github.io/home-row-mods
 
-// try the default timing
-#define TAPPING_TERM 200
+// bit lower the default from 200
+#define TAPPING_TERM 180
 
 // Prevent normal rollover on alphas from accidentally triggering mods.
 #define IGNORE_MOD_TAP_INTERRUPT
