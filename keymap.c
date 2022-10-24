@@ -95,17 +95,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_SYM] = LAYOUT_cullmann(
-    XXXXXXX,        C(KC_X),      C(KC_C),      C(KC_V),          KC_ESC,           KC_LCBR,         KC_AMPR,           KC_ASTR,         KC_LPRN,        KC_RCBR,
+    XXXXXXX,        C(KC_X),      C(KC_C),      C(KC_V),          XXXXXXX,          KC_LCBR,         KC_AMPR,           KC_ASTR,         KC_LPRN,        KC_RCBR,
     XXXXXXX,        KC_LALT,      KC_LCTL,      KC_LSFT,          XXXXXXX,          KC_PLUS,         KC_DLR,            KC_PERC,         KC_CIRC,        KC_COLN,
     XXXXXXX,        KC_RALT,      KC_LGUI,      XXXXXXX,          XXXXXXX,          KC_PIPE,         KC_EXLM,           KC_AT,           KC_HASH,        KC_TILD,
-                                                KC_TAB,           KC_SPC,           KC_UNDS,         KC_RPRN
+                                                KC_ESC,           KC_SPC,           KC_UNDS,         KC_RPRN
 ),
 
 [_NUM] = LAYOUT_cullmann(
-    XXXXXXX,        C(KC_X),      C(KC_C),      C(KC_V),          KC_ESC,           KC_LBRC,         KC_7,              KC_8,            KC_9,           KC_RBRC,
+    XXXXXXX,        C(KC_X),      C(KC_C),      C(KC_V),          XXXXXXX,          KC_LBRC,         KC_7,              KC_8,            KC_9,           KC_RBRC,
     XXXXXXX,        KC_LALT,      KC_LCTL,      KC_LSFT,          XXXXXXX,          KC_EQL,          KC_4,              KC_5,            KC_6,           KC_SCLN,
     XXXXXXX,        KC_RALT,      KC_LGUI,      XXXXXXX,          XXXXXXX,          KC_BSLS,         KC_1,              KC_2,            KC_3,           KC_GRV,
-                                                KC_TAB,           KC_SPC,           KC_MINS,         KC_0
+                                                KC_ESC,           KC_SPC,           KC_MINS,         KC_0
 ),
 
 [_FN] = LAYOUT_cullmann(
