@@ -116,8 +116,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_NAV] = LAYOUT_cullmann(
-    KC_PGUP,        KC_HOME,      KC_UP,        KC_END,           KC_PGUP,          QK_BOOT,         XXXXXXX,           XXXXXXX,         XXXXXXX,        XXXXXXX,
-    KC_PGDN,        KC_LEFT,      KC_DOWN,      KC_RGHT,          KC_PGDN,          XXXXXXX,         KC_RSFT,           KC_RCTL,         KC_LALT,        XXXXXXX,
+    XXXXXXX,        KC_PGUP,      KC_UP,        KC_PGDN,          XXXXXXX,          QK_BOOT,         XXXXXXX,           XXXXXXX,         XXXXXXX,        XXXXXXX,
+    KC_HOME,        KC_LEFT,      KC_DOWN,      KC_RGHT,          KC_END,           XXXXXXX,         KC_RSFT,           KC_RCTL,         KC_LALT,        XXXXXXX,
     XXXXXXX,        XXXXXXX,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX,         XXXXXXX,           KC_RGUI,         KC_RALT,        XXXXXXX,
                                                 KC_TAB,           KC_SPC,           KC_ESC,          KC_BSPC
 )
