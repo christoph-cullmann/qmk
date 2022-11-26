@@ -88,9 +88,9 @@ enum planck_layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_QWERTY] = LAYOUT_cullmann(
-    KC_Q,           KC_W,         KC_E,         KC_R,             KC_T,             KC_Y,            KC_U,              KC_I,            KC_O,           KC_P,
-    LT(_NUM, KC_A), LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F),     KC_G,             KC_H,            RSFT_T(KC_J),      RCTL_T(KC_K),    LALT_T(KC_L),   LT(_NAV, KC_QUOT),
-    LT(_SYM, KC_Z), RALT_T(KC_X), LGUI_T(KC_C), KC_V,             KC_B,             KC_N,            KC_M,              RGUI_T(KC_COMM), RALT_T(KC_DOT), LT(_FN, KC_SLSH),
+    KC_Q,           KC_W,         KC_F,         KC_P,             KC_B,             KC_J,            KC_L,              KC_U,            KC_Y,           KC_QUOT,
+    LT(_NUM, KC_A), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T),     KC_G,             KC_M,            RSFT_T(KC_N),      RCTL_T(KC_E),    LALT_T(KC_I),   LT(_NAV, KC_O),
+    LT(_SYM, KC_Z), RALT_T(KC_X), LGUI_T(KC_C), KC_D,             KC_V,             KC_K,            KC_H,              RGUI_T(KC_COMM), RALT_T(KC_DOT), LT(_FN, KC_SLSH),
                                                 KC_TAB,           KC_SPC,           KC_ENT,          KC_BSPC
 ),
 
