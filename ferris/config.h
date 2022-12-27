@@ -36,6 +36,9 @@
 // achordion will avoid the worst
 #define PERMISSIVE_HOLD
 
+// caps word is great for defines
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+
 //
 // remove some features we don't need
 //
