@@ -18,3 +18,6 @@ CAPS_WORD_ENABLE = yes
 
 # add achordion to improve home row modifiers
 SRC += achordion.c
+
+# per key debounce:  https://github.com/qmk/qmk_firmware/blob/master/docs/feature_debounce_type.md
+DEBOUNCE_TYPE = sym_defer_pk

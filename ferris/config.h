@@ -30,7 +30,7 @@
 #define IGNORE_MOD_TAP_INTERRUPT
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define TAPPING_FORCE_HOLD
+#define QUICK_TAP_TERM 0
 
 // try to be more permissive with holds, allows to trigger modifiers faster
 // achordion will avoid the worst
@@ -38,17 +38,3 @@
 
 // caps word is great for defines
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
-
-//
-// remove some features we don't need
-//
-
-// not more than 8 layers
-#define LAYER_STATE_8BIT
-
-// we don't need locking
-#undef LOCKING_SUPPORT_ENABLE
-#undef LOCKING_RESYNC_ENABLE
-
-// we don't use one shot keys
-#define NO_ACTION_ONESHOT
