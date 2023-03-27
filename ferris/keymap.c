@@ -86,14 +86,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F12,         KC_F7,        KC_F8,        KC_F9,            KC_PSCR,          QK_BOOT,         XXXXXXX,           XXXXXXX,         XXXXXXX,        XXXXXXX,
     KC_F11,         KC_F4,        KC_F5,        KC_F6,            KC_DEL,           XXXXXXX,         XXXXXXX,           KC_RCTL,         KC_LALT,        KC_RSFT,
     KC_F10,         KC_F1,        KC_F2,        KC_F3,            KC_INS,           XXXXXXX,         KC_RALT,           KC_RGUI,         XXXXXXX,        XXXXXXX,
-                                                KC_TAB,           KC_SPC,           KC_ESC,          KC_BSPC
+                                                KC_TAB,           KC_ESC,           KC_ENT,          KC_BSPC
 ),
 
 [_NAV] = LAYOUT_cullmann(
     XXXXXXX,        KC_PGUP,      KC_UP,        KC_PGDN,          XXXXXXX,          QK_BOOT,         XXXXXXX,           XXXXXXX,         XXXXXXX,        XXXXXXX,
     KC_HOME,        KC_LEFT,      KC_DOWN,      KC_RGHT,          KC_END,           XXXXXXX,         KC_RSFT,           KC_RCTL,         KC_LALT,        XXXXXXX,
     XXXXXXX,        XXXXXXX,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX,         KC_RALT,           KC_RGUI,         XXXXXXX,        XXXXXXX,
-                                                KC_TAB,           KC_SPC,           KC_ESC,          KC_BSPC
+                                                KC_TAB,           KC_ESC,           KC_ENT,          KC_BSPC
 )
 
 };
