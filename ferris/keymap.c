@@ -16,26 +16,6 @@
 
 #include QMK_KEYBOARD_H
 
-//
-// improve home row modifiers via achordion
-//
-
-#include "achordion.h"
-
-bool process_record_user(uint16_t keycode, keyrecord_t* record)
-{
-    if (!process_achordion(keycode, record)) {
-        return false;
-    }
-
-    return true;
-}
-
-void matrix_scan_user(void)
-{
-    achordion_task();
-}
-
 // layout helper macro, we just use 34 keys
 #define LAYOUT_cullmann(\
 K00,   K01,   K02,   K03,   K04,                 K05,   K06,   K07,   K08,   K09,\
@@ -52,48 +32,48 @@ K20,   K21,   K22,   K23,   K24, K25,   K26,   K27,   K28,   K29,\
 
 // our layers, used as index in layers and rgb lights
 enum planck_layers {
-  _QWERTY,
-  _SYM,
-  _NUM,
-  _FN,
-  _NAV
+  L_CANARY,
+  L_EXT,
+  L_FUN,
+  L_SYM,
+  L_SYM2
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-[_QWERTY] = LAYOUT_cullmann(
-    KC_W,           KC_L,         KC_Y,         KC_P,             KC_B,             KC_Z,            KC_F,              KC_O,            KC_U,           KC_QUOT,
-    LT(_NUM, KC_C), LALT_T(KC_R), LCTL_T(KC_S), LT(_SYM, KC_T),   KC_G,             KC_M,            LT(_FN, KC_N),     RCTL_T(KC_E),    LALT_T(KC_I),   LT(_NAV, KC_A),
-    LSFT_T(KC_Q),   KC_J,         LGUI_T(KC_V), RALT_T(KC_D),     KC_K,             KC_X,            RALT_T(KC_H),      RGUI_T(KC_SLSH), KC_COMM,        RSFT_T(KC_DOT),
-                                                KC_TAB,           KC_SPC,           KC_ENT,          KC_BSPC
+[L_CANARY] = LAYOUT_cullmann(
+    KC_W,           KC_L,           KC_Y,           KC_P,             KC_B,             KC_Z,            KC_F,              KC_O,            KC_U,           KC_QUOT,
+    KC_C,           KC_R,           KC_S,           KC_T,             KC_G,             KC_M,            KC_N,              KC_E,            KC_I,           KC_A,
+    KC_Q,           KC_J,           KC_V,           KC_D,             KC_K,             KC_X,            KC_H,              KC_SLSH,         KC_COMM,        KC_DOT,
+                                                    MO(L_EXT),        KC_SPC,           KC_RSFT,         MO(L_SYM)
 ),
 
-[_SYM] = LAYOUT_cullmann(
-    XXXXXXX,        C(KC_X),      C(KC_C),      C(KC_V),          XXXXXXX,          KC_LCBR,         KC_AMPR,           KC_ASTR,         KC_LPRN,        KC_RCBR,
-    KC_LSFT,        KC_LALT,      KC_LCTL,      XXXXXXX,          XXXXXXX,          KC_PLUS,         KC_DLR,            KC_PERC,         KC_CIRC,        KC_COLN,
-    XXXXXXX,        XXXXXXX,      KC_LGUI,      KC_RALT,          XXXXXXX,          KC_PIPE,         KC_EXLM,           KC_AT,           KC_HASH,        KC_TILD,
-                                                KC_TAB,           KC_SPC,           KC_UNDS,         KC_RPRN
+[L_EXT] = LAYOUT_cullmann(
+    KC_ESC,         LALT(KC_LEFT),  LCTL(KC_F),     LALT(KC_RGHT),    KC_INS,           KC_PGUP,         KC_HOME,           KC_UP,           KC_END,         KC_CAPS,
+    OSM(MOD_LALT),  OSM(MOD_LGUI),  OSM(MOD_LSFT),  OSM(MOD_LCTL),    OSM(MOD_RALT),    KC_PGDN,         KC_LEFT,           KC_DOWN,         KC_RGHT,        KC_DEL,
+    LCTL(KC_Z),     LCTL(KC_X),     LCTL(KC_C),     KC_LGUI,          LCTL(KC_V),       KC_PSCR,         KC_BSPC,           KC_TAB,          KC_APP,         KC_ENT,
+                                                    KC_TRNS,          KC_TRNS,          KC_ENT,          MO(L_FUN)
 ),
 
-[_NUM] = LAYOUT_cullmann(
-    XXXXXXX,        C(KC_X),      C(KC_C),      C(KC_V),          XXXXXXX,          KC_LBRC,         KC_7,              KC_8,            KC_9,           KC_RBRC,
-    XXXXXXX,        KC_LALT,      KC_LCTL,      KC_LSFT,          XXXXXXX,          KC_EQL,          KC_4,              KC_5,            KC_6,           KC_SCLN,
-    XXXXXXX,        XXXXXXX,      KC_LGUI,      KC_RALT,          XXXXXXX,          KC_BSLS,         KC_1,              KC_2,            KC_3,           KC_GRV,
-                                                KC_TAB,           KC_SPC,           KC_MINS,         KC_0
+[L_FUN] = LAYOUT_cullmann(
+    KC_MSTP,        KC_MPRV,        KC_MPLY,        KC_MNXT,          KC_BRIU,          KC_F12,          KC_F7,             KC_F8,           KC_F9,          LCTL(KC_PLUS),
+    OSM(MOD_LALT),  OSM(MOD_LGUI),  OSM(MOD_LSFT),  OSM(MOD_LCTL),    KC_BRID,          KC_F11,          KC_F4,             KC_F5,           KC_F6,          LCTL(KC_MINS),
+    KC_MUTE,        KC_VOLD,        RCS(KC_C),      KC_VOLU,          RCS(KC_V),        KC_F10,          KC_F1,             KC_F2,           KC_F3,          LCTL(KC_0),
+                                                    KC_TRNS,          KC_TRNS,          KC_ENT,          KC_TRNS
 ),
 
-[_FN] = LAYOUT_cullmann(
-    KC_F12,         KC_F7,        KC_F8,        KC_F9,            KC_PSCR,          QK_BOOT,         XXXXXXX,           XXXXXXX,         XXXXXXX,        XXXXXXX,
-    KC_F11,         KC_F4,        KC_F5,        KC_F6,            KC_DEL,           XXXXXXX,         XXXXXXX,           KC_RCTL,         KC_LALT,        KC_RSFT,
-    KC_F10,         KC_F1,        KC_F2,        KC_F3,            KC_INS,           XXXXXXX,         KC_RALT,           KC_RGUI,         XXXXXXX,        XXXXXXX,
-                                                KC_TAB,           KC_ESC,           KC_ENT,          KC_BSPC
+[L_SYM] = LAYOUT_cullmann(
+    KC_EXLM,        KC_AT,          KC_HASH,        KC_DLR,           KC_PERC,          KC_EQL,          KC_7,              KC_8,            KC_9,           KC_PLUS,
+    KC_SCLN,        KC_COLN,        KC_LCBR,        KC_LPRN,          KC_LBRC,          KC_ASTR,         KC_4,              KC_5,            KC_6,           KC_MINS,
+    KC_CIRC,        KC_AMPR,        KC_RCBR,        KC_RPRN,          KC_RBRC,          KC_0,            KC_1,              KC_2,            KC_3,           KC_SLSH,
+                                                    KC_TRNS,          MO(L_SYM2),       KC_TRNS,         KC_TRNS
 ),
 
-[_NAV] = LAYOUT_cullmann(
-    XXXXXXX,        KC_PGUP,      KC_UP,        KC_PGDN,          XXXXXXX,          QK_BOOT,         XXXXXXX,           XXXXXXX,         XXXXXXX,        XXXXXXX,
-    KC_HOME,        KC_LEFT,      KC_DOWN,      KC_RGHT,          KC_END,           XXXXXXX,         KC_RSFT,           KC_RCTL,         KC_LALT,        XXXXXXX,
-    XXXXXXX,        XXXXXXX,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX,         KC_RALT,           KC_RGUI,         XXXXXXX,        XXXXXXX,
-                                                KC_TAB,           KC_ESC,           KC_ENT,          KC_BSPC
+[L_SYM2] = LAYOUT_cullmann(
+    RALT(KC_1),     RALT(KC_2),     RALT(KC_3),     RALT(KC_4),       XXXXXXX,          XXXXXXX,         XXXXXXX,           XXXXXXX,         XXXXXXX,        QK_BOOT,
+    KC_NUBS,        LSFT(KC_NUBS),  KC_NUHS,        LSFT(KC_NUHS),    XXXXXXX,          XXXXXXX,         XXXXXXX,           XXXXXXX,         XXXXXXX,        XXXXXXX,
+    KC_GRV,         LSFT(KC_GRV),   RALT(KC_C),     LSFT(KC_MINS),    XXXXXXX,          XXXXXXX,         XXXXXXX,           XXXXXXX,         XXXXXXX,        XXXXXXX,
+                                                    KC_TRNS,          KC_TRNS,          KC_TRNS,         KC_TRNS
 )
 
 };
