@@ -15,3 +15,7 @@
  */
 
 #pragma once
+
+// we don't have any lock switches
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
