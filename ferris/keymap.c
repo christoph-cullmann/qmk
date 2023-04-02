@@ -34,9 +34,9 @@ K20,   K21,   K22,   K23,   K24, K25,   K26,   K27,   K28,   K29,\
 enum planck_layers {
   L_CANARY,
   L_EXT,
-  L_FUN,
   L_SYM,
-  L_SYM2
+  L_SYM2,
+  L_FUN,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -52,28 +52,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,         LALT(KC_LEFT),  LCTL(KC_F),     LALT(KC_RGHT),    KC_INS,           KC_PGUP,         KC_HOME,           KC_UP,           KC_END,         KC_CAPS,
     OSM(MOD_LALT),  OSM(MOD_LGUI),  OSM(MOD_LSFT),  OSM(MOD_LCTL),    OSM(MOD_RALT),    KC_PGDN,         KC_LEFT,           KC_DOWN,         KC_RGHT,        KC_DEL,
     LCTL(KC_Z),     LCTL(KC_X),     LCTL(KC_C),     KC_LGUI,          LCTL(KC_V),       KC_PSCR,         KC_BSPC,           KC_TAB,          KC_APP,         KC_ENT,
-                                                    XXXXXXX,          XXXXXXX,          KC_ENT,          MO(L_FUN)
-),
-
-[L_FUN] = LAYOUT_cullmann(
-    KC_MSTP,        KC_MPRV,        KC_MPLY,        KC_MNXT,          KC_BRIU,          KC_F12,          KC_F7,             KC_F8,           KC_F9,          LCTL(KC_PLUS),
-    OSM(MOD_LALT),  OSM(MOD_LGUI),  OSM(MOD_LSFT),  OSM(MOD_LCTL),    KC_BRID,          KC_F11,          KC_F4,             KC_F5,           KC_F6,          LCTL(KC_MINS),
-    KC_MUTE,        KC_VOLD,        RCS(KC_C),      KC_VOLU,          RCS(KC_V),        KC_F10,          KC_F1,             KC_F2,           KC_F3,          LCTL(KC_0),
-                                                    XXXXXXX,          XXXXXXX,          KC_ENT,          XXXXXXX
+                                                    KC_TRNS,          XXXXXXX,          KC_ENT,          MO(L_FUN)
 ),
 
 [L_SYM] = LAYOUT_cullmann(
     KC_EXLM,        KC_AT,          KC_HASH,        KC_DLR,           KC_PERC,          KC_EQL,          KC_7,              KC_8,            KC_9,           KC_PLUS,
     KC_SCLN,        KC_COLN,        KC_LCBR,        KC_LPRN,          KC_LBRC,          KC_ASTR,         KC_4,              KC_5,            KC_6,           KC_MINS,
     KC_CIRC,        KC_AMPR,        KC_RCBR,        KC_RPRN,          KC_RBRC,          KC_0,            KC_1,              KC_2,            KC_3,           KC_SLSH,
-                                                    MO(L_FUN),        MO(L_SYM2),       XXXXXXX,         XXXXXXX
+                                                    MO(L_FUN),        MO(L_SYM2),       XXXXXXX,         KC_TRNS
 ),
 
 [L_SYM2] = LAYOUT_cullmann(
     RALT(KC_1),     RALT(KC_2),     RALT(KC_3),     RALT(KC_4),       XXXXXXX,          XXXXXXX,         XXXXXXX,           XXXXXXX,         XXXXXXX,        QK_BOOT,
     KC_NUBS,        LSFT(KC_NUBS),  KC_NUHS,        LSFT(KC_NUHS),    XXXXXXX,          XXXXXXX,         XXXXXXX,           XXXXXXX,         XXXXXXX,        XXXXXXX,
     KC_GRV,         LSFT(KC_GRV),   RALT(KC_C),     LSFT(KC_MINS),    XXXXXXX,          XXXXXXX,         XXXXXXX,           XXXXXXX,         XXXXXXX,        XXXXXXX,
-                                                    XXXXXXX,          XXXXXXX,          XXXXXXX,         XXXXXXX
-)
+                                                    KC_TRNS,          XXXXXXX,          XXXXXXX,         KC_TRNS
+),
+
+[L_FUN] = LAYOUT_cullmann(
+    KC_MSTP,        KC_MPRV,        KC_MPLY,        KC_MNXT,          KC_BRIU,          KC_F12,          KC_F7,             KC_F8,           KC_F9,          LCTL(KC_PLUS),
+    OSM(MOD_LALT),  OSM(MOD_LGUI),  OSM(MOD_LSFT),  OSM(MOD_LCTL),    KC_BRID,          KC_F11,          KC_F4,             KC_F5,           KC_F6,          LCTL(KC_MINS),
+    KC_MUTE,        KC_VOLD,        RCS(KC_C),      KC_VOLU,          RCS(KC_V),        KC_F10,          KC_F1,             KC_F2,           KC_F3,          LCTL(KC_0),
+                                                    KC_TRNS,          XXXXXXX,          KC_ENT,          KC_TRNS
+),
 
 };
