@@ -1,11 +1,6 @@
 # Christoph Cullmann's Layout
 
-Layout with 34 keys
+Layout with 34 keys, uses Seniply, but with Canary as base layout.
 
-Derived from the standard Planck layout and ideas from the Miryoku layout.
-
-https://github.com/manna-harbour/miryoku
-
-In addition features Achordion to improve the home row modifiers.
-
-https://getreuer.info/posts/keyboards/achordion/index.html
+* https://stevep99.github.io/seniply/
+* https://github.com/Apsu/Canary
