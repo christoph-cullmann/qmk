@@ -8,7 +8,7 @@
         "device_version": "0.3.0"
     },
     "layouts": {
-        "LAYOUT_totem": {
+        "LAYOUT_split_3x5_3_1": {
             "layout": [
                 {"x": 0.776, "y": 1.519, "w": 1.059, "r": -10},
                 {"x": 1.964, "y": 0.605, "w": 1.059, "r": -4},
