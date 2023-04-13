@@ -50,14 +50,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,        C(KC_X),      C(KC_C),      C(KC_V),          XXXXXXX,          KC_LCBR,         KC_AMPR,           KC_ASTR,         KC_LPRN,        KC_RCBR,
    OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),    OSM(MOD_RALT),        KC_PLUS,         KC_DLR,            KC_PERC,         KC_CIRC,        KC_COLN,
    KC_LSFT,   XXXXXXX,        XXXXXXX,      KC_LGUI,      KC_RALT,          XXXXXXX,          KC_PIPE,         KC_EXLM,           KC_AT,           KC_HASH,        KC_TILD,KC_RSFT,
-                                      XXXXXXX,           KC_TAB,           KC_SPC,           KC_UNDS,         KC_RPRN, XXXXXXX
+                                      XXXXXXX,           KC_TAB,           KC_SPC,           KC_UNDS,         KC_LPRN, KC_RPRN
 ),
 
 [_NUM] = LAYOUT(
     XXXXXXX,        C(KC_X),      C(KC_C),      C(KC_V),          XXXXXXX,          KC_LBRC,         KC_7,              KC_8,            KC_9,           KC_RBRC,
     OSM(MOD_LGUI),  OSM(MOD_LALT),  OSM(MOD_LCTL),  OSM(MOD_LSFT),    OSM(MOD_RALT),        KC_EQL,          KC_4,              KC_5,            KC_6,           KC_SCLN,
     KC_LSFT,  XXXXXXX,        XXXXXXX,      KC_LGUI,      KC_RALT,          XXXXXXX,          KC_BSLS,         KC_1,              KC_2,            KC_3,           KC_GRV,KC_RSFT,
-                                    XXXXXXX,              KC_TAB,           KC_SPC,           KC_MINS,         KC_0, XXXXXXX
+                                    XXXXXXX,              KC_TAB,           KC_SPC,           KC_MINS,         KC_0, KC_DOT
 ),
 
 [_FN] = LAYOUT(
