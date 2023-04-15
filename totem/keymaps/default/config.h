@@ -1,17 +1,14 @@
 #pragma once
 
-/**
- * The way how "handedness" is decided (which half is which),
- * see https://docs.qmk.fm/#/feature_split_keyboard?id=setting-handedness for more options.
- */
+// The way how "handedness" is decided (which half is which), see https://docs.qmk.fm/#/feature_split_keyboard?id=setting-handedness for more options.
 #define MASTER_LEFT
 
-/**
- * Tapping this number of times holds the key until tapped once again.
- */
+// tapping this number of times holds the key until tapped once again, disabled via 0
 #define ONESHOT_TAP_TOGGLE 0
 
-/**
- * Time (in ms) before the one shot key is released.
- */
+// time (in ms) before the one shot key is released
 #define ONESHOT_TIMEOUT 3000
+
+// we don't have any lock switches
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
