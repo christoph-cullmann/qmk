@@ -76,27 +76,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-/*
-  ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
+// better handling of home row modifiers
+// see https://getreuer.info/posts/keyboards/achordion/index.html
 
+#include "achordion.h"
+#include "achordion.c"
 
-                                                          ██████
-                                                            ██  ▄▄▄▄
-                                                            ██ ██▀▀██
-                                                            ▀▀ ██▄▄██
-                                                        ██████  ▀▀▀▀
-                                                          ██ ▄▄▄▄▄▄
-                                                          ██ ██▀▀▀▀
-                                                          ██ ██████
-                                                             ██▄▄▄▄
-                                                             ▀▀▀▀▀▀
-                                                           ████████
-                                                           ██ ██ ██
-                                                           ██ ██ ██
-                                                           ▀▀ ▀▀ ▀▀
-                                                          ████████
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+  if (!process_achordion(keycode, record)) { return false; }
+  return true;
+}
 
-*/
-
-
-
+void matrix_scan_user(void) {
+  achordion_task();
+}
