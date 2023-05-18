@@ -15,3 +15,23 @@
 
 // enable NKRO by default
 #define FORCE_NKRO
+
+//
+// improve home row modifiers via achoridion
+//
+
+// settings for home row modifiers
+// details see https://precondition.github.io/home-row-mods
+
+// the default of 200
+#define TAPPING_TERM 200
+
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
+#define QUICK_TAP_TERM 0
+
+// try to be more permissive with holds, allows to trigger modifiers faster
+// achordion will avoid the worst
+#define PERMISSIVE_HOLD
+
+// caps word is great for defines
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
