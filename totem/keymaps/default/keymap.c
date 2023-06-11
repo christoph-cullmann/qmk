@@ -24,7 +24,7 @@
 // │ d e f i n e   l a y e r s                       │
 // └─────────────────────────────────────────────────┘ 
 
-enum totem_layers {
+enum my_layers {
   _QWERTY,
   _SYM,
   _NUM,
