@@ -80,7 +80,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // see https://getreuer.info/posts/keyboards/achordion/index.html
 
 #include "achordion.h"
-#include "achordion.c"
+
+// By default, the timeout is 1000 ms for all keys.
+uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
+  return 500;
+}
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   if (!process_achordion(keycode, record)) { return false; }

@@ -12,6 +12,9 @@ NKRO_ENABLE = yes
 # sym_eager_pk does do some key chatter
 DEBOUNCE_TYPE = asym_eager_defer_pk
 
+# achordion
+SRC += achordion.c
+
 # build
 # qmk compile -kb ferris/sweep -km christoph-cullmann
 # qmk flash -kb ferris/sweep -km christoph-cullmann
