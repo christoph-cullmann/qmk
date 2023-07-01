@@ -76,16 +76,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-// Configure hold on other key press per key
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        // thumb buttons should be reactive
-        case MO(_SYM):
-        case LT(_NUM, KC_SPC):
-        case LT(_NAV, KC_BSPC):
-        case MO(_FN):
-            return true;
-        default:
-            return false;
-    }
+// better handling of home row modifiers
+// see https://getreuer.info/posts/keyboards/achordion/index.html
+
+#include "achordion.h"
+#include "achordion.c"
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+  if (!process_achordion(keycode, record)) { return false; }
+  return true;
+}
+
+void matrix_scan_user(void) {
+  achordion_task();
 }

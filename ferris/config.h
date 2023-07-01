@@ -42,8 +42,9 @@
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
 
-// we want that the thumb buttons are more reactive
-#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
+// try to be more permissive with holds, allows to trigger modifiers faster
+// achordion will avoid the worst
+#define PERMISSIVE_HOLD
 
 // caps word is great for defines
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
