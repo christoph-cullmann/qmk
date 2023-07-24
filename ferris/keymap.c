@@ -40,10 +40,10 @@ enum my_layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_QWERTY] = LAYOUT(
-    KC_SLSH,           KC_W,         KC_M,         KC_P,             KC_Q,             KC_Z,            KC_K,              KC_COMM,            KC_DOT,           KC_SCLN,
-     RALT_T(KC_R) ,  LALT_T(KC_S), LCTL_T(KC_N) ,  LSFT_T(KC_T) ,   LGUI_T(KC_G),             RGUI_T(KC_V),              RSFT_T(KC_H),      RCTL_T(KC_A),    LALT_T(KC_I) ,     RALT_T(KC_O),
-   KC_X ,   KC_C,          KC_F , KC_D,     KC_B,             KC_J,             KC_L ,      KC_U , KC_Y,         KC_QUOT,
-                                                MO(_SYM), LT(_NUM, KC_SPC),         LT(_NAV, KC_E),    MO(_FN)
+    KC_W,           KC_L,         KC_Y,         KC_P,             KC_B,             KC_Z,            KC_F,              KC_O,            KC_U,           KC_QUOT,
+     RALT_T(KC_C) ,  LALT_T(KC_R), LCTL_T(KC_S) ,  LSFT_T(KC_T) ,   LGUI_T(KC_G),             RGUI_T(KC_M),              RSFT_T(KC_N),      RCTL_T(KC_E),    LALT_T(KC_I) ,     RALT_T(KC_A),
+   KC_Q ,   KC_J,          KC_V , KC_D ,     KC_K,             KC_X,             KC_H ,      KC_SLSH , KC_COMM,         KC_DOT ,
+                                                MO(_SYM), LT(_NUM, KC_SPC),         MO(_NAV),    MO(_FN)
 ),
 
 [_SYM] = LAYOUT(
