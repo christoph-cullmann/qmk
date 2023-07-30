@@ -16,11 +16,8 @@
 
 #pragma once
 
-// tapping this number of times holds the key until tapped once again, disabled via 0
-#define ONESHOT_TAP_TOGGLE 0
-
-// time (in ms) before the one shot key is released
-#define ONESHOT_TIMEOUT 3000
+// we don't use one shots
+#define NO_ACTION_ONESHOT
 
 // we don't have any lock switches
 #undef LOCKING_SUPPORT_ENABLE
