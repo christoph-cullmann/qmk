@@ -76,21 +76,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-// better handling of home row modifiers
-// see https://getreuer.info/posts/keyboards/achordion/index.html
-
-#include "achordion.h"
-
-// By default, the timeout is 1000 ms for all keys.
-uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-  return 500;
-}
-
-bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-  if (!process_achordion(keycode, record)) { return false; }
-  return true;
-}
-
-void matrix_scan_user(void) {
-  achordion_task();
+// try to be more permissive with holds for layer switch keys
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(_NUM, KC_SPC):
+        case LT(_NAV, KC_E):
+            // Immediately select the hold action when another key is tapped.
+            return true;
+        default:
+            // Do not select the hold action when another key is tapped.
+            return false;
+    }
 }
