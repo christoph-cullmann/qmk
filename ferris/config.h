@@ -26,10 +26,6 @@
 // enable NKRO by default
 #define FORCE_NKRO
 
-//
-// improve home row modifiers via achoridion
-//
-
 // settings for home row modifiers
 // details see https://precondition.github.io/home-row-mods
 
