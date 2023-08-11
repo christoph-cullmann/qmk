@@ -118,7 +118,7 @@ const rgblight_segment_t PROGMEM qwerty_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 );
 
 const rgblight_segment_t PROGMEM sym_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 8, HSV_BLUE}
+    {1, 8, HSV_GOLD}
 );
 
 const rgblight_segment_t PROGMEM num_layer[] = RGBLIGHT_LAYER_SEGMENTS(
@@ -130,7 +130,7 @@ const rgblight_segment_t PROGMEM fn_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 );
 
 const rgblight_segment_t PROGMEM nav_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 8, HSV_WHITE}
+    {1, 8, HSV_BLUE}
 );
 
 const rgblight_segment_t * const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
@@ -148,6 +148,7 @@ void keyboard_post_init_user(void) {
 
 layer_state_t layer_state_set_user(layer_state_t state)
 {
+    rgblight_set_layer_state(_QWERTY, layer_state_cmp(state, _QWERTY));
     rgblight_set_layer_state(_SYM, layer_state_cmp(state, _SYM));
     rgblight_set_layer_state(_NUM, layer_state_cmp(state, _NUM));
     rgblight_set_layer_state(_FN, layer_state_cmp(state, _FN));
