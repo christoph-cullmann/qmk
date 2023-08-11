@@ -114,23 +114,23 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
  */
 
 const rgblight_segment_t PROGMEM qwerty_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 8, HSV_WHITE}
+    {0, 9, HSV_WHITE}
 );
 
 const rgblight_segment_t PROGMEM sym_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 8, HSV_GOLD}
+    {0, 9, HSV_GOLD}
 );
 
 const rgblight_segment_t PROGMEM num_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 8, HSV_GREEN}
+    {0, 9, HSV_GREEN}
 );
 
 const rgblight_segment_t PROGMEM fn_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 8, HSV_RED}
+    {0, 9, HSV_RED}
 );
 
 const rgblight_segment_t PROGMEM nav_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 8, HSV_BLUE}
+    {0, 9, HSV_BLUE}
 );
 
 const rgblight_segment_t * const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
