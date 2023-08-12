@@ -18,3 +18,5 @@ Layout with 34 keys, using Canary with thumb e hack:
       SFS: 5.73%    (Red/Alt: 2.66% | 3.08%)
 
       LH/RH: 42.13% | 57.87%
+
+The ; in the layout is used to switch to some magic layer.
