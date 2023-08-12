@@ -48,7 +48,7 @@ static bool my_on_left_hand(keypos_t pos)
  * ----------------------------------
  */
 
-const rgblight_segment_t PROGMEM qwerty_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+const rgblight_segment_t PROGMEM base_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 9, HSV_WHITE}
 );
 
@@ -73,7 +73,7 @@ const rgblight_segment_t PROGMEM magic_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 );
 
 const rgblight_segment_t * const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
-    [_QWERTY] = qwerty_layer,
+    [_BASE] = base_layer,
     [_SYM] = sym_layer,
     [_NUM] = num_layer,
     [_FN] = fn_layer,
@@ -88,7 +88,7 @@ void keyboard_post_init_user(void) {
 
 layer_state_t layer_state_set_user(layer_state_t state)
 {
-    rgblight_set_layer_state(_QWERTY, layer_state_cmp(state, _QWERTY));
+    rgblight_set_layer_state(_BASE, layer_state_cmp(state, _BASE));
     rgblight_set_layer_state(_SYM, layer_state_cmp(state, _SYM));
     rgblight_set_layer_state(_NUM, layer_state_cmp(state, _NUM));
     rgblight_set_layer_state(_FN, layer_state_cmp(state, _FN));

@@ -25,7 +25,7 @@
 // └─────────────────────────────────────────────────┘ 
 
 enum my_layers {
-  _QWERTY,
+  _BASE,
   _SYM,
   _NUM,
   _FN,
@@ -39,7 +39,7 @@ enum my_layers {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-[_QWERTY] = LAYOUT(
+[_BASE] = LAYOUT(
     KC_W,           KC_L,         KC_Y,         KC_P,             KC_B,             KC_Z,            KC_F,              KC_O,            KC_U,           KC_QUOT,
      RALT_T(KC_C) ,  LALT_T(KC_R), LCTL_T(KC_S) ,  LSFT_T(KC_T) ,   LGUI_T(KC_G),             RGUI_T(KC_M),              RSFT_T(KC_N),      RCTL_T(KC_E),    LALT_T(KC_I) ,     RALT_T(KC_A),
    KC_LSFT,  KC_Q ,   KC_J,          KC_V , KC_D ,     KC_K,             KC_X,             KC_H ,      KC_SLSH , KC_COMM,         KC_DOT ,KC_RSFT,
