@@ -92,19 +92,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-// try to be more permissive with holds for layer switch keys
-bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(_NUM, KC_SPC):
-        case LT(_NAV, KC_E):
-            // Immediately select the hold action when another key is tapped.
-            return true;
-        default:
-            // Do not select the hold action when another key is tapped.
-            return false;
-    }
-}
-
 /* plwnck rev6 RGB layout:
  * ----------------------------------
  * |   6       5       4        3   |
