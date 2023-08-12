@@ -15,7 +15,7 @@ GRAVE_ESC_ENABLE = no
 MAGIC_ENABLE = no
 
 # more responsive debouncing: https://michael.stapelberg.ch/posts/2021-05-08-keyboard-input-latency-qmk-kinesis/
-DEBOUNCE_TYPE = sym_eager_pk
+DEBOUNCE_TYPE = asym_eager_defer_pk
 
 # add achordion to improve home row modifiers
 SRC += achordion.c
