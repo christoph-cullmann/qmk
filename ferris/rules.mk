@@ -18,7 +18,7 @@ MAGIC_ENABLE = no
 DEBOUNCE_TYPE = asym_eager_defer_pk
 
 # add achordion to improve home row modifiers
-SRC += achordion.c
+SRC += ../common/achordion.c
 
 # build
 # qmk compile -kb ferris/sweep -km christoph-cullmann

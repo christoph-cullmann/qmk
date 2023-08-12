@@ -16,30 +16,8 @@
 
 #pragma once
 
-// no more than 8 layers
-#define LAYER_STATE_8BIT
-
-// we don't use one shots
-#define NO_ACTION_ONESHOT
-
-// we don't have any lock switches
-#undef LOCKING_SUPPORT_ENABLE
-#undef LOCKING_RESYNC_ENABLE
-
-// enable NKRO by default
-#define FORCE_NKRO
-
-// settings for home row modifiers
-// details see https://precondition.github.io/home-row-mods
-
-// the default of 200
-#define TAPPING_TERM 175
-
-// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define QUICK_TAP_TERM 0
-
-// try to be more permissive with holds
-#define PERMISSIVE_HOLD
+// our shared config parts
+#include "../common/config.h"
 
 //
 // audio configuration
