@@ -16,6 +16,9 @@
 
 #pragma once
 
+// no more than 8 layers
+#define LAYER_STATE_8BIT
+
 // we don't use one shots
 #define NO_ACTION_ONESHOT
 
