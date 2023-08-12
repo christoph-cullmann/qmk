@@ -155,3 +155,37 @@ layer_state_t layer_state_set_user(layer_state_t state)
     rgblight_set_layer_state(_NAV, layer_state_cmp(state, _NAV));
     return state;
 }
+
+//
+// improve home row modifiers via achordion
+//
+
+#include "achordion.h"
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record)
+{
+    if (!process_achordion(keycode, record)) {
+        return false;
+    }
+
+    return true;
+}
+
+void matrix_scan_user(void)
+{
+    achordion_task();
+}
+
+static bool planck_on_left_hand(keypos_t pos)
+{
+    // planck is like a split keyboard, beside for the last row
+    return (pos.row < 3) || (pos.row == 3 && pos.col < 3) || (pos.row == 7 && pos.col > 2);
+}
+
+bool achordion_chord(uint16_t tap_hold_keycode,
+                     keyrecord_t* tap_hold_record,
+                     uint16_t other_keycode,
+                     keyrecord_t* other_record)
+{
+    return planck_on_left_hand(tap_hold_record->event.key) != planck_on_left_hand(other_record->event.key);
+}

@@ -89,3 +89,23 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
             return false;
     }
 }
+
+//
+// improve home row modifiers via achordion
+//
+
+#include "achordion.h"
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record)
+{
+    if (!process_achordion(keycode, record)) {
+        return false;
+    }
+
+    return true;
+}
+
+void matrix_scan_user(void)
+{
+    achordion_task();
+}
