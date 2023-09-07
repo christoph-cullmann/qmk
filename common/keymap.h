@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_W,           KC_L,         KC_Y,         KC_P,             KC_B,             KC_Z,            KC_F,              OSL(_MAGIC),            KC_U,           KC_QUOT,
      RALT_T(KC_C) ,  LALT_T(KC_R), LCTL_T(KC_S) ,  LSFT_T(KC_T) ,   LGUI_T(KC_G),             RGUI_T(KC_M),              RSFT_T(KC_N),      RCTL_T(KC_O),    LALT_T(KC_I) ,     RALT_T(KC_A),
    KC_Q ,   KC_J,          KC_V , KC_D ,     KC_K,             KC_X,             KC_H ,      KC_SLSH , KC_COMM,         KC_DOT ,
-                                                MO(_SYM), LT(_NUM, KC_SPC),         LT(_NAV, KC_E),    MO(_FN)
+                                                LT(_SYM, KC_SCLN), LT(_NUM, KC_SPC),         LT(_NAV, KC_E),    LT(_FN, KC_MINS)
 ),
 
 [_SYM] = LAYOUT(
