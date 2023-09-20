@@ -16,11 +16,5 @@
 
 #include QMK_KEYBOARD_H
 
-// split keyboard
-static bool my_on_left_hand(keypos_t pos)
-{
-    return pos.row < MATRIX_ROWS / 2;
-}
-
 // our shared 34 keys keymap
 #include "../common/keymap.h"

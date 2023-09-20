@@ -14,9 +14,6 @@ SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE = no
 MAGIC_ENABLE = no
 
-# add achordion to improve home row modifiers
-SRC += ../common/achordion.c
-
 # build
 # qmk compile -kb ferris/sweep -km christoph-cullmann
 # qmk flash -kb ferris/sweep -km christoph-cullmann

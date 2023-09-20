@@ -35,5 +35,5 @@
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
 
-// try to be more permissive with holds
-#define PERMISSIVE_HOLD
+// allow that thumb buttons have permissive hold
+#define PERMISSIVE_HOLD_PER_KEY
