@@ -29,11 +29,11 @@
 // settings for home row modifiers
 // details see https://precondition.github.io/home-row-mods
 
-// the default of 200
-#define TAPPING_TERM 200
+// the default is 200
+#define TAPPING_TERM 180
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
 
-// allow that thumb buttons have permissive hold
+// allow that thumb buttons have permissive hold, see keymap.h
 #define PERMISSIVE_HOLD_PER_KEY
