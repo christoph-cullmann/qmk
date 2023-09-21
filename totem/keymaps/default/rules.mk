@@ -11,9 +11,6 @@ SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE = no
 MAGIC_ENABLE = no
 
-# add achordion to improve home row modifiers
-SRC += ../../../common/achordion.c
-
 # build
 # qmk compile -kb totem -km default
 # qmk flash -kb totem -km default

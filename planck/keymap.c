@@ -31,12 +31,6 @@ K20,   K21,   K22,   K23,   K24,   KC_NO, KC_NO, K25,   K26,   K27,   K28,   K29
 KC_NO, KC_NO, KC_NO, K30,   K31,   KC_NO, KC_NO, K32,   K33,   KC_NO, KC_NO, KC_NO\
 )
 
-// Planck is like a split keyboard, beside for the last row
-static bool my_on_left_hand(keypos_t pos)
-{
-    return (pos.row < 3) || (pos.row == 3 && pos.col < 3) || (pos.row == 7 && pos.col > 2);
-}
-
 // our shared 34 keys keymap
 #include "../common/keymap.h"
 
