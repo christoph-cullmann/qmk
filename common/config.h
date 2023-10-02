@@ -35,5 +35,5 @@
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
 
-// allow that thumb buttons have permissive hold, see keymap.h
-#define PERMISSIVE_HOLD_PER_KEY
+// use permissive hold together with achordion
+#define PERMISSIVE_HOLD

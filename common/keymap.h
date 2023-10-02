@@ -71,16 +71,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(_SYM, KC_SCLN):
-        case LT(_NUM, KC_SPC):
-        case LT(_NAV, KC_E):
-        case LT(_FN, KC_MINS):
-            // Immediately select the hold action when another key is tapped.
-            return true;
-        default:
-            // Do not select the hold action when another key is tapped.
-            return false;
-    }
+#include "achordion.h"
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+  if (!process_achordion(keycode, record)) { return false; }
+  return true;
+}
+
+void matrix_scan_user(void) {
+  achordion_task();
+}
+
+// Returns true if `pos` on the left hand of the keyboard, false if right.
+static bool on_left_hand(keypos_t pos) {
+  // works not really on planck for bottom row, but we handle that differently
+  return pos.row < MATRIX_ROWS / 2;
+}
+
+bool achordion_chord(uint16_t tap_hold_keycode,
+                     keyrecord_t* tap_hold_record,
+                     uint16_t other_keycode,
+                     keyrecord_t* other_record) {
+  // Also allow same-hand holds when the other key is in the rows below the
+  // alphas. I need the `% (MATRIX_ROWS / 2)` because my keyboard is split.
+  if (other_record->event.key.row % (MATRIX_ROWS / 2) >= 3) { return true; }
+
+  // Otherwise, follow the opposite hands rule.
+  return on_left_hand(tap_hold_record->event.key) !=
+         on_left_hand(other_record->event.key);
 }
