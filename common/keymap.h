@@ -92,8 +92,8 @@ bool achordion_chord(uint16_t tap_hold_keycode,
                      keyrecord_t* tap_hold_record,
                      uint16_t other_keycode,
                      keyrecord_t* other_record) {
-  // Also allow same-hand holds when the other key is in the rows below the
-  // alphas. I need the `% (MATRIX_ROWS / 2)` because my keyboard is split.
+  // allow that bottom row has no delay
+  if (tap_hold_record->event.key.row % (MATRIX_ROWS / 2) >= 3) { return true; }
   if (other_record->event.key.row % (MATRIX_ROWS / 2) >= 3) { return true; }
 
   // Otherwise, follow the opposite hands rule.

@@ -16,6 +16,9 @@
 
 #pragma once
 
+// bit larger debounce delay, the default is 5
+#define DEBOUNCE 10
+
 // no more than 8 layers
 #define LAYER_STATE_8BIT
 
@@ -30,7 +33,7 @@
 // details see https://precondition.github.io/home-row-mods
 
 // the default is 200
-#define TAPPING_TERM 175
+#define TAPPING_TERM 200
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
