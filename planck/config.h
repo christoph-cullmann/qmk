@@ -17,7 +17,7 @@
 #pragma once
 
 // our shared config parts
-#include "../common/config.h"
+#include "/home/cullmann/install/qmk/christoph-cullmann/common/config.h"
 
 //
 // audio configuration
