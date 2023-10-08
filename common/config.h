@@ -26,6 +26,10 @@
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
 
+// deactivate more features
+#define NO_ACTION_MACRO
+#define NO_ACTION_FUNCTION
+
 // enable NKRO by default
 #define FORCE_NKRO
 
@@ -40,3 +44,7 @@
 
 // use permissive hold together with achordion
 #define PERMISSIVE_HOLD
+
+// delay hold/release to not mess up software
+#define TAP_CODE_DELAY 10
+
