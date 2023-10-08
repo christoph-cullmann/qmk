@@ -29,6 +29,7 @@
 // deactivate more features
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
+#define NO_MUSIC_MODE
 
 // enable NKRO by default
 #define FORCE_NKRO
