@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_MAGIC] = LAYOUT(
     XXXXXXX,        XXXXXXX,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX,         XXXXXXX,           KC_CAPS,         XXXXXXX,        XXXXXXX,
-    XXXXXXX,        XXXXXXX,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX,         XXXXXXX,           XXXXXXX,         XXXXXXX,        XXXXXXX,
+    KC_LBRC,        KC_RBRC,      KC_LPRN,      KC_RPRN,          XXXXXXX,          XXXXXXX,         KC_LCBR,           KC_RCBR,         S(KC_COMMA),    S(KC_DOT),
     XXXXXXX,        XXXXXXX,      XXXXXXX,      XXXXXXX,          XXXXXXX,          XXXXXXX,         XXXXXXX,           XXXXXXX,         XXXXXXX,        XXXXXXX,
                                                 XXXXXXX,          XXXXXXX,          XXXXXXX,         XXXXXXX
 )
