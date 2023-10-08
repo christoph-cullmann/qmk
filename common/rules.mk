@@ -1,14 +1,13 @@
-# allow to use 'qmk console'
-CONSOLE_ENABLE = yes
-
 # Enable N-Key Rollover
 NKRO_ENABLE = yes
 
 # less features we don't use
-MOUSEKEY_ENABLE = no
-SPACE_CADET_ENABLE = no
+COMMAND_ENABLE = no
+CONSOLE_ENABLE = no
 GRAVE_ESC_ENABLE = no
 MAGIC_ENABLE = no
+MOUSEKEY_ENABLE = no
+SPACE_CADET_ENABLE = no
 
 # responsive debouncing
 DEBOUNCE_TYPE = sym_eager_pk
