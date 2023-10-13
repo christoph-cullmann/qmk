@@ -46,6 +46,9 @@
 // use permissive hold together with achordion
 #define PERMISSIVE_HOLD
 
+// special handle thumb keys
+#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
+
 // delay hold/release to not mess up software
 #define TAP_CODE_DELAY 10
 
