@@ -49,3 +49,6 @@
 // delay hold/release to not mess up software
 #define TAP_CODE_DELAY 10
 
+// enable the https://sunaku.github.io/home-row-mods.html#typing-streaks inspired stuff
+#define ACHORDION_STREAK
+
