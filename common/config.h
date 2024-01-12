@@ -38,7 +38,8 @@
 // details see https://precondition.github.io/home-row-mods
 
 // the default is 200
-#define TAPPING_TERM 200
+#define TAPPING_TERM 175
+#define TAPPING_TERM_PER_KEY
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
