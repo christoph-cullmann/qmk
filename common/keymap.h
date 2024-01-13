@@ -74,7 +74,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
     case RGUI_T(KC_H):
     case LALT_T(KC_I):
     case RALT_T(KC_A):
-      return TAPPING_TERM + 100;
+      return TAPPING_TERM_SLOW;
 
     default:
       return TAPPING_TERM;
