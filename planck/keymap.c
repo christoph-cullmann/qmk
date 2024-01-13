@@ -67,10 +67,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             rgblight_sethsv_noeeprom(HSV_GOLD);
             break;
 
-        case _MAGIC:
-            rgblight_sethsv_noeeprom(HSV_MAGENTA);
-            break;
-
         default:
             break;
     }

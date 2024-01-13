@@ -1,25 +1,22 @@
 # Christoph Cullmann's Layout
 
-Layout with 34 keys, using Canary with thumb e hack:
+Layout with 34 keys, using Canary as base layer:
 
-    canarye (chrcul) (0 likes)
-      w l y p b  z f ; u '
-      c r s t g  m n o i a
-      q j v d k  x h / , .
-                   e
+  canary-ortho
+    w l y p b  z f o u '
+    c r s t g  m n e i a
+    q j v d k  x h / , .
 
-    MT-QUOTES:
-      Alt: 24.61%
-      Rol: 48.53%   (In/Out: 24.92% | 23.62%)
-      One:  3.36%   (In/Out:  2.34% |  1.02%)
-      Red:  3.17%   (Bad:     0.08%)
+  MT-QUOTES:
+    Alt: 23.47%
+    Rol: 48.11%   (In/Out: 21.19% | 26.92%)
+    One:  2.20%   (In/Out:  0.89% |  1.31%)
+    Red:  3.26%   (Bad:     0.08%)
 
-      SFB: 0.70%
-      SFS: 5.73%    (Red/Alt: 2.66% | 3.08%)
+    SFB: 0.94%
+    SFS: 7.80%    (Red/Alt: 3.62% | 4.17%)
 
-      LH/RH: 42.13% | 57.87%
-
-The ; in the layout is used to switch to some magic layer.
+    LH/RH: 42.15% | 57.85%
 
 ATM this needs to be cloned to
 
@@ -27,3 +24,10 @@ ATM this needs to be cloned to
 
 to work properly.
 
+Based on
+
+https://github.com/Apsu/Canary
+
+and
+
+https://github.com/manna-harbour/miryoku

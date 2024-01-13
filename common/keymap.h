@@ -20,18 +20,17 @@ enum my_layers {
   _NUM,
   _NAV,
   _SYM,
-  _FN,
-  _MAGIC
+  _FN
 };
 
 // our keymap
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT(
-    KC_W,         KC_L,         KC_Y,         KC_P,         KC_B,             KC_Z,           KC_F,         OSL(_MAGIC),  KC_U,         KC_QUOT,
-    RALT_T(KC_C), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T), KC_G,             KC_M,           RSFT_T(KC_N), RCTL_T(KC_O), LALT_T(KC_I), RALT_T(KC_A),
+    KC_W,         KC_L,         KC_Y,         KC_P,         KC_B,             KC_Z,           KC_F,         KC_O,         KC_U,         KC_QUOT,
+    RALT_T(KC_C), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T), KC_G,             KC_M,           RSFT_T(KC_N), RCTL_T(KC_E), LALT_T(KC_I), RALT_T(KC_A),
     KC_Q,         KC_J,         KC_V,         LGUI_T(KC_D), KC_K,             KC_X,           RGUI_T(KC_H), KC_SLSH,      KC_COMM,      KC_DOT,
-                                              MO(_SYM),     LT(_NUM, KC_SPC), LT(_NAV, KC_E), MO(_FN)
+                                              MO(_SYM),     LT(_NUM, KC_SPC), MO(_NAV),       MO(_FN)
 ),
 
 [_NUM] = LAYOUT(
@@ -60,13 +59,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F11,       KC_F4,        KC_F5,        KC_F6,        KC_DEL,           XXXXXXX,        KC_RSFT,      KC_RCTL,      KC_LALT,      KC_RALT,
     KC_F10,       KC_F1,        KC_F2,        KC_F3,        KC_INS,           XXXXXXX,        KC_RGUI,      XXXXXXX,      XXXXXXX,      XXXXXXX,
                                               KC_BSPC,      KC_ESC,           XXXXXXX,        XXXXXXX
-),
-
-[_MAGIC] = LAYOUT(
-    XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,          XXXXXXX,        XXXXXXX,      KC_CAPS,      XXXXXXX,      XXXXXXX,
-    KC_LBRC,      KC_RBRC,      KC_LPRN,      KC_RPRN,      XXXXXXX,          XXXXXXX,        KC_LCBR,      KC_RCBR,      S(KC_COMMA),  S(KC_DOT),
-    TO(_NUM),     TO(_SYM),     XXXXXXX,      XXXXXXX,      XXXXXXX,          XXXXXXX,        XXXXXXX,      XXXXXXX,      TO(_FN),      TO(_NAV),
-                                              XXXXXXX,      XXXXXXX,          XXXXXXX,        XXXXXXX
 )
 
 };
@@ -82,7 +74,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
     case RGUI_T(KC_H):
     case LALT_T(KC_I):
     case RALT_T(KC_A):
-      return TAPPING_TERM + 50;
+      return TAPPING_TERM + 100;
 
     default:
       return TAPPING_TERM;
