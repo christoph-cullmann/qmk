@@ -15,6 +15,12 @@
 
 #include "totem.h"
 
+// Returns true if `pos` on the left hand of the keyboard, false if right.
+static bool on_left_hand(keypos_t pos) {
+  // works not really on planck for bottom row, but we handle that differently
+  return pos.row < MATRIX_ROWS / 2;
+}
+
 // layout helper macro, we just use 34 keys
 #undef LAYOUT
 #define LAYOUT(\

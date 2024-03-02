@@ -90,12 +90,6 @@ void matrix_scan_user(void) {
   achordion_task();
 }
 
-// Returns true if `pos` on the left hand of the keyboard, false if right.
-static bool on_left_hand(keypos_t pos) {
-  // works not really on planck for bottom row, but we handle that differently
-  return pos.row < MATRIX_ROWS / 2;
-}
-
 bool achordion_chord(uint16_t tap_hold_keycode,
                      keyrecord_t* tap_hold_record,
                      uint16_t other_keycode,

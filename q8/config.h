@@ -14,13 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include QMK_KEYBOARD_H
+#pragma once
 
-// Returns true if `pos` on the left hand of the keyboard, false if right.
-static bool on_left_hand(keypos_t pos) {
-  // works not really on planck for bottom row, but we handle that differently
-  return pos.row < MATRIX_ROWS / 2;
-}
-
-// our shared 34 keys keymap
-#include "../common/keymap.h"
+// our shared config parts
+#include "/home/cullmann/install/qmk/christoph-cullmann/common/config.h"
