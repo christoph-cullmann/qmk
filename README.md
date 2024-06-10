@@ -20,7 +20,7 @@ Layout with 34 keys, using Dhorf as base layer:
 
 ATM this needs to be cloned to
 
-/home/cullmann/install/qmk/christoph-cullmann
+/home/cullmann/data/qmk/christoph-cullmann
 
 to work properly.
 

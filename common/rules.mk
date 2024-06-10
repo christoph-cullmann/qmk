@@ -14,7 +14,7 @@ SPACE_CADET_ENABLE = no
 DEBOUNCE_TYPE = sym_eager_pk
 
 # add achordion to improve home row modifiers
-SRC += /home/cullmann/install/qmk/christoph-cullmann/common/achordion.c
+SRC += /home/cullmann/data/qmk/christoph-cullmann/common/achordion.c
 
 # good optimizations
 LTO_ENABLE = yes
