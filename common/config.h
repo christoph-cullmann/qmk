@@ -38,8 +38,8 @@
 // details see https://precondition.github.io/home-row-mods
 
 // the default is 200
-#define TAPPING_TERM 180
-#define TAPPING_TERM_SLOW 260
+#define TAPPING_TERM 170
+#define TAPPING_TERM_SLOW 220
 #define TAPPING_TERM_PER_KEY
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
@@ -51,6 +51,4 @@
 // delay hold/release to not mess up software
 #define TAP_CODE_DELAY 10
 
-// enable the https://sunaku.github.io/home-row-mods.html#typing-streaks inspired stuff
-#define ACHORDION_STREAK
 
