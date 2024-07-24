@@ -42,6 +42,9 @@
 #define TAPPING_TERM_SLOW 220
 #define TAPPING_TERM_PER_KEY
 
+// detect typing streaks
+#define ACHORDION_STREAK
+
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
 
