@@ -1,6 +1,6 @@
 # Christoph Cullmann's Layout
 
-Layout with 34 keys, using Dhorf as base layer:
+Layout with 42 keys, using Dhorf as base layer:
 
     dhorf (Oxey)
       v l h k q  j f o u ,

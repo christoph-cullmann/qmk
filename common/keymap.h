@@ -65,22 +65,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #include "achordion.h"
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
-  switch (keycode) {
-    // Increase the tapping term a little for alt/algr/win.
-    case RALT_T(KC_C):
-    case LALT_T(KC_R):
-    case LGUI_T(KC_D):
-    case RGUI_T(KC_H):
-    case LALT_T(KC_I):
-    case RALT_T(KC_A):
-      return TAPPING_TERM_SLOW;
-
-    default:
-      return TAPPING_TERM;
-  }
-}
-
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   if (!process_achordion(keycode, record)) { return false; }
   return true;
@@ -94,11 +78,7 @@ bool achordion_chord(uint16_t tap_hold_keycode,
                      keyrecord_t* tap_hold_record,
                      uint16_t other_keycode,
                      keyrecord_t* other_record) {
-  // allow that bottom row has no delay
-  if (tap_hold_record->event.key.row % (MATRIX_ROWS / 2) >= 3) { return true; }
-  if (other_record->event.key.row % (MATRIX_ROWS / 2) >= 3) { return true; }
-
-  // Otherwise, follow the opposite hands rule.
+  // follow the opposite hands rule.
   return on_left_hand(tap_hold_record->event.key) !=
          on_left_hand(other_record->event.key);
 }

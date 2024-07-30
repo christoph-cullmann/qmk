@@ -17,9 +17,9 @@
 #include QMK_KEYBOARD_H
 
 // Returns true if `pos` on the left hand of the keyboard, false if right.
-static bool on_left_hand(keypos_t pos) {
-  // works not really on planck for bottom row, but we handle that differently
-  return pos.row < MATRIX_ROWS / 2;
+static bool on_left_hand(keypos_t pos)
+{
+    return (pos.row < 3) || (pos.row == 3 && pos.col < 3) || (pos.row == 7 && pos.col > 2);
 }
 
 // layout helper macro, we just use 42 keys

@@ -37,11 +37,6 @@
 // settings for home row modifiers
 // details see https://precondition.github.io/home-row-mods
 
-// the default is 200
-#define TAPPING_TERM 170
-#define TAPPING_TERM_SLOW 220
-#define TAPPING_TERM_PER_KEY
-
 // detect typing streaks
 #define ACHORDION_STREAK
 
