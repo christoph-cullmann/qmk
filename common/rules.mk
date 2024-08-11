@@ -10,9 +10,6 @@ MOUSEKEY_ENABLE = no
 MUSIC_ENABLE = no
 SPACE_CADET_ENABLE = no
 
-# responsive debouncing
-DEBOUNCE_TYPE = sym_eager_pk
-
 # add achordion to improve home row modifiers
 SRC += /home/cullmann/data/qmk/christoph-cullmann/common/achordion.c
 
