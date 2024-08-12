@@ -38,7 +38,7 @@
 // details see https://precondition.github.io/home-row-mods
 
 // detect typing streaks
-//#define ACHORDION_STREAK
+#define ACHORDION_STREAK
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
