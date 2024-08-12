@@ -16,9 +16,6 @@
 
 #pragma once
 
-// bit larger debounce delay, the default is 5
-#define DEBOUNCE 10
-
 // no more than 8 layers
 #define LAYER_STATE_8BIT
 
