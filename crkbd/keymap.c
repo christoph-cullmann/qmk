@@ -41,3 +41,43 @@ K24,   K25,   K26,   K27,   K28,   K29,   K30,   K31,   K32,   K33,   K34,   K35
 
 // our shared 42 keys keymap
 #include "../common/keymap.h"
+
+void keyboard_post_init_user(void) {
+    // always use the same effect
+    rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING);
+    rgblight_set_speed_noeeprom(2);
+
+    // trigger init of layer state
+    layer_state_set_user(layer_state);
+}
+
+// handle layer changes for backlight
+layer_state_t layer_state_set_user(layer_state_t state) {
+    const uint8_t layer = get_highest_layer(state);
+    switch (layer) {
+        case _BASE:
+            rgblight_sethsv_noeeprom(HSV_WHITE);
+            break;
+
+        case _SYM:
+            rgblight_sethsv_noeeprom(HSV_RED);
+            break;
+
+        case _NUM:
+            rgblight_sethsv_noeeprom(HSV_GREEN);
+            break;
+
+        case _FN:
+            rgblight_sethsv_noeeprom(HSV_BLUE);
+            break;
+
+        case _NAV:
+            rgblight_sethsv_noeeprom(HSV_GOLD);
+            break;
+
+        default:
+            break;
+    }
+
+    return state;
+}
