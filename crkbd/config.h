@@ -20,7 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-//#define USE_MATRIX_I2C
+// our shared config parts
+#include "/home/cullmann/data/qmk/christoph-cullmann/common/config.h"
 
 /* Select hand configuration */
 
