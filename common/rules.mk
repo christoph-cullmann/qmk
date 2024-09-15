@@ -10,8 +10,8 @@ MOUSEKEY_ENABLE = no
 MUSIC_ENABLE = no
 SPACE_CADET_ENABLE = no
 
-# needed for sm_td
-DEFERRED_EXEC_ENABLE = yes
+# add achordion to improve home row modifiers
+SRC += /home/cullmann/data/qmk/christoph-cullmann/common/achordion.c
 
 # good optimizations
 LTO_ENABLE = yes

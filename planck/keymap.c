@@ -16,6 +16,12 @@
 
 #include QMK_KEYBOARD_H
 
+// Returns true if `pos` on the left hand of the keyboard, false if right.
+static bool on_left_hand(keypos_t pos)
+{
+    return (pos.row < 3) || (pos.row == 3 && pos.col < 3) || (pos.row == 7 && pos.col > 2);
+}
+
 // layout helper macro, we just use 42 keys
 #undef LAYOUT
 #define LAYOUT(\
