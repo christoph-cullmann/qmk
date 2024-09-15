@@ -1,4 +1,4 @@
-/* Copyright 2022 Christoph Cullmann
+/* Copyright 2024 Christoph Cullmann
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,19 +31,5 @@
 // enable NKRO by default
 #define FORCE_NKRO
 
-// settings for home row modifiers
-// details see https://precondition.github.io/home-row-mods
-
-// detect typing streaks
-#define ACHORDION_STREAK
-
-// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define QUICK_TAP_TERM 0
-
-// use permissive hold together with achordion
-#define PERMISSIVE_HOLD
-
-// delay hold/release to not mess up software
-#define TAP_CODE_DELAY 10
-
-
+// needed for sm_td
+#define MAX_DEFERRED_EXECUTORS 10

@@ -1,4 +1,4 @@
-/* Copyright 2022 Christoph Cullmann
+/* Copyright 2024 Christoph Cullmann
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,14 +23,30 @@ enum my_layers {
   _FN
 };
 
+// home row mods and Co.
+enum custom_keycodes {
+    SMTD_KEYCODES_BEGIN = SAFE_RANGE,
+    CKC_S,
+    CKC_R,
+    CKC_N,
+    CKC_T,
+    CKC_D,
+    CKC_G,
+    CKC_C,
+    CKC_A,
+    CKC_E,
+    CKC_I,
+    SMTD_KEYCODES_END,
+};
+
 // our keymap
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT(
     XXXXXXX,      KC_V,         KC_L,         KC_H,         KC_K,         KC_Q,               KC_J,           KC_F,         KC_O,         KC_U,         KC_COMM,      XXXXXXX,
-    XXXXXXX,      RALT_T(KC_S), LALT_T(KC_R), LCTL_T(KC_N), LSFT_T(KC_T), KC_W,               KC_Y,           RSFT_T(KC_C), RCTL_T(KC_A), LALT_T(KC_E), RALT_T(KC_I), XXXXXXX,
-    XXXXXXX,      KC_Z,         KC_X,         KC_M,         LGUI_T(KC_D), KC_B,               KC_P,           RGUI_T(KC_G), KC_QUOT,      KC_SCLN,      KC_DOT,       XXXXXXX,
-                                              MO(_SYM),     KC_SPC,  MO(_NUM),  MO(_NAV),   KC_BSPC,       MO(_FN)
+    XXXXXXX,      CKC_S,        CKC_R,        CKC_N,        CKC_T,        KC_W,               KC_Y,           CKC_C,        CKC_A,        CKC_E,        CKC_I,        XXXXXXX,
+    XXXXXXX,      KC_Z,         KC_X,         KC_M,         CKC_D,        KC_B,               KC_P,           CKC_G,        KC_QUOT,      KC_SCLN,      KC_DOT,       XXXXXXX,
+                                              MO(_SYM),     KC_SPC,       MO(_NUM),           MO(_NAV),       KC_BSPC,      MO(_FN)
 ),
 
 [_NUM] = LAYOUT(
@@ -63,23 +79,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-#include "achordion.h"
+// home row mods and Co.
+// include needs above custom_keycodes declared
+#include "sm_td.h"
 
-bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-  if (!process_achordion(keycode, record)) { return false; }
-  return true;
+void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
+    switch (keycode) {
+        SMTD_MT(CKC_S, KC_S, KC_RIGHT_ALT)
+        SMTD_MT(CKC_R, KC_R, KC_LEFT_ALT)
+        SMTD_MT(CKC_N, KC_N, KC_LEFT_CTRL)
+        SMTD_MT(CKC_T, KC_T, KC_LSFT)
+        SMTD_MT(CKC_D, KC_D, KC_LEFT_GUI)
+        SMTD_MT(CKC_G, KC_G, KC_RIGHT_GUI)
+        SMTD_MT(CKC_C, KC_C, KC_RSFT)
+        SMTD_MT(CKC_A, KC_A, KC_RIGHT_CTRL)
+        SMTD_MT(CKC_E, KC_E, KC_LEFT_ALT)
+        SMTD_MT(CKC_I, KC_I, KC_RIGHT_ALT)
+    }
 }
 
-void matrix_scan_user(void) {
-  achordion_task();
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (!process_smtd(keycode, record)) {
+        return false;
+    }
+    return true;
 }
-
-bool achordion_chord(uint16_t tap_hold_keycode,
-                     keyrecord_t* tap_hold_record,
-                     uint16_t other_keycode,
-                     keyrecord_t* other_record) {
-  // follow the opposite hands rule.
-  return on_left_hand(tap_hold_record->event.key) !=
-         on_left_hand(other_record->event.key);
-}
-
