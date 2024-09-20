@@ -40,8 +40,9 @@
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
 
-// use permissive hold together with achordion
-#define PERMISSIVE_HOLD
+// home row mods
+#define TAPPING_FORCE_HOLD
+#define TAPPING_TERM 180
 
 // delay hold/release to not mess up software
 #define TAP_CODE_DELAY 10
