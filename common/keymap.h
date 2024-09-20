@@ -27,7 +27,7 @@ enum my_layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT(
-    TO(_BASE),    KC_V,         KC_L,         KC_H,         KC_K,         KC_Q,            KC_J,           KC_F,         KC_O,         KC_U,         KC_COMM,      KC_PSCR,
+    QK_RBT,       KC_V,         KC_L,         KC_H,         KC_K,         KC_Q,            KC_J,           KC_F,         KC_O,         KC_U,         KC_COMM,      KC_PSCR,
     XXXXXXX,      RALT_T(KC_S), LALT_T(KC_R), LCTL_T(KC_N), LSFT_T(KC_T), KC_W,            KC_Y,           RSFT_T(KC_C), RCTL_T(KC_A), LALT_T(KC_E), RALT_T(KC_I), XXXXXXX,
     XXXXXXX,      KC_Z,         KC_X,         KC_M,         LGUI_T(KC_D), KC_B,            KC_P,           RGUI_T(KC_G), KC_QUOT,      KC_SCLN,      KC_DOT,       XXXXXXX,
                                               MO(_SYM),     KC_SPC,       MO(_NUM),        MO(_NAV),       KC_BSPC,      MO(_FN)
@@ -83,3 +83,42 @@ bool achordion_chord(uint16_t tap_hold_keycode,
          on_left_hand(other_record->event.key);
 }
 
+void keyboard_post_init_user(void) {
+    // always use the same effect
+    rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING);
+    rgblight_set_speed_noeeprom(2);
+
+    // trigger init of layer state
+    layer_state_set_user(layer_state);
+}
+
+// handle layer changes for backlight
+layer_state_t layer_state_set_user(layer_state_t state) {
+    const uint8_t layer = get_highest_layer(state);
+    switch (layer) {
+        case _BASE:
+            rgblight_sethsv_noeeprom(HSV_WHITE);
+            break;
+
+        case _SYM:
+            rgblight_sethsv_noeeprom(HSV_RED);
+            break;
+
+        case _NUM:
+            rgblight_sethsv_noeeprom(HSV_GREEN);
+            break;
+
+        case _FN:
+            rgblight_sethsv_noeeprom(HSV_BLUE);
+            break;
+
+        case _NAV:
+            rgblight_sethsv_noeeprom(HSV_GOLD);
+            break;
+
+        default:
+            break;
+    }
+
+    return state;
+}

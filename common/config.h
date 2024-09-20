@@ -46,4 +46,12 @@
 // delay hold/release to not mess up software
 #define TAP_CODE_DELAY 10
 
+//
+// underglow configuration
+//
 
+// no lights if we sleep
+#define RGBLIGHT_SLEEP
+
+// the modes we do use for lights
+#define RGBLIGHT_EFFECT_BREATHING
