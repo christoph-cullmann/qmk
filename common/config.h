@@ -20,21 +20,19 @@
 // enable NKRO by default
 #define FORCE_NKRO
 
-// settings for home row modifiers
-// details see https://precondition.github.io/home-row-mods
+// many settings taken from https://github.com/getreuer/qmk-keymap
 
-// detect typing streaks
-#define ACHORDION_STREAK
-
-// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define QUICK_TAP_TERM 0
+// don't confuse apps
+#define TAP_CODE_DELAY 5
 
 // home row mods
-#define TAPPING_FORCE_HOLD
-#define TAPPING_TERM 180
+#define TAPPING_TERM 170
+#define TAPPING_TERM_PER_KEY
+#define PERMISSIVE_HOLD
+#define QUICK_TAP_TERM_PER_KEY
 
-// delay hold/release to not mess up software
-#define TAP_CODE_DELAY 10
+// enable streak detection
+#define ACHORDION_STREAK
 
 //
 // underglow configuration

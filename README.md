@@ -42,4 +42,4 @@ Based on ideas and code from:
 
 - https://oxey.dev/dhorf
 - https://github.com/manna-harbour/miryoku
-- https://getreuer.info/posts/keyboards/achordion
+- https://github.com/getreuer/qmk-keymap
