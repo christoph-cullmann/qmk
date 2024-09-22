@@ -28,6 +28,14 @@ You need to have a locally setup QMK and use this repo as overlay:
 
  qmk config user.overlay_dir="/home/cullmann/data/qmk/christoph-cullmann"
 
+To use my keymaps, do for the Corne
+
+ qmk flash -kb crkbd -km christoph-cullmann
+
+or for the Planck
+
+ qmk flash -kb planck/rev6_drop -km christoph-cullmann
+
 # Foundation
 
 Based on ideas and code from:
