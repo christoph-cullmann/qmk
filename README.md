@@ -1,6 +1,6 @@
 # Christoph Cullmann's Layout
 
-Layout with 42 keys, using Dhorf as base layer:
+Layout with 42 keys based on Miryoku, using Dhorf as base layer:
 
     dhorf (Oxey)
       v l h k q  j f o u ,
@@ -24,10 +24,8 @@ ATM this needs to be cloned to
 
 to work properly.
 
-Based on
+Based on ideas and code from:
 
-https://oxey.dev/dhorf
-
-and
-
-https://github.com/manna-harbour/miryoku
+- https://oxey.dev/dhorf
+- https://github.com/manna-harbour/miryoku
+- https://getreuer.info/posts/keyboards/achordion
