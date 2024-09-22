@@ -24,8 +24,10 @@ ATM this needs to be cloned to
 
 to work properly.
 
-Based on ideas and code from:
+Based on
 
-- https://oxey.dev/dhorf
-- https://github.com/manna-harbour/miryoku
-- https://github.com/filterpaper/qmk_userspace
+https://oxey.dev/dhorf
+
+and
+
+https://github.com/manna-harbour/miryoku
