@@ -52,6 +52,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+// many settings taken from https://github.com/getreuer/qmk-keymap
+
 #include "features/achordion.h"
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
@@ -70,6 +72,30 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   // follow the opposite hands rule.
   return on_left_hand(tap_hold_record->event.key) !=
          on_left_hand(other_record->event.key);
+}
+
+
+uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
+  switch (tap_hold_keycode) {
+    default:
+      return 800;  // Use a timeout of 800 ms.
+  }
+}
+
+uint16_t achordion_streak_chord_timeout(
+    uint16_t tap_hold_keycode, uint16_t next_keycode) {
+  // Disable streak detection on LT keys.
+  if (IS_QK_LAYER_TAP(tap_hold_keycode)) {
+    return 0;
+  }
+
+  // Otherwise, tap_hold_keycode is a mod-tap key.
+  const uint8_t mod = mod_config(QK_MOD_TAP_GET_MODS(tap_hold_keycode));
+  if ((mod & (MOD_LSFT | MOD_RSFT)) != 0) {
+    return 100;  // A short streak timeout for Shift mod-tap keys.
+  } else {
+    return 220;  // A longer timeout otherwise.
+  }
 }
 
 void keyboard_post_init_user(void) {
