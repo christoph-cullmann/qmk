@@ -20,6 +20,10 @@ Layout with 42 keys based on Miryoku, using Dhorf as base layer:
 
 # How to use
 
+This repository is a valid QMK external userspace as documented here:
+
+ https://docs.qmk.fm/newbs_external_userspace
+
 You need to have a locally setup QMK and use this repo as overlay:
 
  qmk config user.overlay_dir="/home/cullmann/data/qmk/christoph-cullmann"
