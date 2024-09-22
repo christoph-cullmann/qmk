@@ -11,7 +11,7 @@ MUSIC_ENABLE = no
 SPACE_CADET_ENABLE = no
 
 # add achordion to improve home row modifiers
-SRC += common/achordion.c
+SRC += features/achordion.c
 
 # good optimizations
 LTO_ENABLE = yes
