@@ -16,28 +16,28 @@ enum my_layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT(
-    QK_RBT,       KC_V,         KC_L,         KC_H,         KC_K,         KC_Q,            KC_J,           KC_F,         KC_O,         KC_U,         KC_COMM,      KC_PSCR,
-    XXXXXXX,      RALT_T(KC_S), LALT_T(KC_R), LCTL_T(KC_N), LSFT_T(KC_T), KC_W,            KC_Y,           RSFT_T(KC_C), RCTL_T(KC_A), LALT_T(KC_E), RALT_T(KC_I), XXXXXXX,
-    XXXXXXX,      KC_Z,         KC_X,         KC_M,         LGUI_T(KC_D), KC_B,            KC_P,           RGUI_T(KC_G), KC_QUOT,      KC_SCLN,      KC_DOT,       XXXXXXX,
+    C(KC_X),      KC_V,         KC_L,         KC_H,         KC_K,         KC_Q,            KC_J,           KC_F,         KC_O,         KC_U,         KC_COMM,      KC_PSCR,
+    C(KC_C),      RALT_T(KC_S), LALT_T(KC_R), LCTL_T(KC_N), LSFT_T(KC_T), KC_W,            KC_Y,           RSFT_T(KC_C), RCTL_T(KC_A), LALT_T(KC_E), RALT_T(KC_I), XXXXXXX,
+    C(KC_V),      KC_Z,         KC_X,         KC_M,         LGUI_T(KC_D), KC_B,            KC_P,           RGUI_T(KC_G), KC_QUOT,      KC_SCLN,      KC_DOT,       XXXXXXX,
                                               MO(_SYM),     KC_SPC,       MO(_NUM),        MO(_NAV),       KC_BSPC,      MO(_FN)
 ),
 
 [_NUM] = LAYOUT(
-    _______,      XXXXXXX,      C(KC_X),      C(KC_C),      C(KC_V),      XXXXXXX,         KC_LBRC,        KC_7,         KC_8,         KC_9,         KC_RBRC,      _______,
+    _______,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      QK_RBT,          KC_LBRC,        KC_7,         KC_8,         KC_9,         KC_RBRC,      _______,
     _______,      KC_RALT,      KC_LALT,      KC_LCTL,      KC_LSFT,      XXXXXXX,         KC_EQL,         KC_4,         KC_5,         KC_6,         KC_SLSH,      _______,
     _______,      XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_LGUI,      XXXXXXX,         KC_BSLS,        KC_1,         KC_2,         KC_3,         KC_GRV,       _______,
                                               XXXXXXX,      XXXXXXX,      XXXXXXX,         KC_MINS,        KC_0,         KC_DOT
 ),
 
 [_NAV] = LAYOUT(
-    _______,      XXXXXXX,      KC_PGUP,      KC_UP,        KC_PGDN,      XXXXXXX,         QK_BOOT,        XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      _______,
+    _______,      XXXXXXX,      KC_PGUP,      KC_UP,        KC_PGDN,      XXXXXXX,         QK_RBT,         XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      _______,
     _______,      KC_HOME,      KC_LEFT,      KC_DOWN,      KC_RGHT,      KC_END,          XXXXXXX,        KC_RSFT,      KC_RCTL,      KC_LALT,      KC_RALT,      _______,
     _______,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,         XXXXXXX,        KC_RGUI,      XXXXXXX,      XXXXXXX,      XXXXXXX,      _______,
                                               KC_TAB,       KC_ENT,       XXXXXXX,         XXXXXXX,        XXXXXXX,      XXXXXXX
 ),
 
 [_SYM] = LAYOUT(
-    _______,      XXXXXXX,      C(KC_X),      C(KC_C),      C(KC_V),      XXXXXXX,         KC_LCBR,        KC_AMPR,      KC_ASTR,      KC_LPRN,      KC_RCBR,      _______,
+    _______,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      QK_BOOT,         KC_LCBR,        KC_AMPR,      KC_ASTR,      KC_LPRN,      KC_RCBR,      _______,
     _______,      KC_RALT,      KC_LALT,      KC_LCTL,      KC_LSFT,      XXXXXXX,         KC_PLUS,        KC_DLR,       KC_PERC,      KC_CIRC,      KC_QUES,      _______,
     _______,      XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_LGUI,      XXXXXXX,         KC_PIPE,        KC_EXLM,      KC_AT,        KC_HASH,      KC_TILD,      _______,
                                               XXXXXXX,      XXXXXXX,      XXXXXXX,         KC_UNDS,        KC_LPRN,      KC_RPRN
