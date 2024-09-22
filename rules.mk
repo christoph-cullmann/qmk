@@ -13,5 +13,9 @@ SPACE_CADET_ENABLE = no
 # add achordion to improve home row modifiers
 SRC += features/achordion.c
 
+# add bongocat & luna for OLED
+SRC += features/oled_bongocat.c
+SRC += features/oled_luna.c
+
 # good optimizations
 LTO_ENABLE = yes

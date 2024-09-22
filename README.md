@@ -43,3 +43,4 @@ Based on ideas and code from:
 - https://oxey.dev/dhorf
 - https://github.com/manna-harbour/miryoku
 - https://github.com/getreuer/qmk-keymap
+- https://github.com/filterpaper/qmk_userspace
