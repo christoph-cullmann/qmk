@@ -18,11 +18,13 @@ Layout with 42 keys based on Miryoku, using Dhorf as base layer:
 
       LH/RH: 48.52% | 51.48%
 
-ATM this needs to be cloned to
+# How to use
 
-/home/cullmann/data/qmk/christoph-cullmann
+You need to have a locally setup QMK and use this repo as overlay:
 
-to work properly.
+ qmk config user.overlay_dir="/home/cullmann/data/qmk/christoph-cullmann"
+
+# Foundation
 
 Based on ideas and code from:
 

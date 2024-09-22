@@ -1,5 +1,6 @@
 # include common settings
-include /home/cullmann/data/qmk/christoph-cullmann/common/rules.mk
+ROOT_DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
+include ${ROOT_DIR}../../../../rules.mk
 
 # build
 # qmk compile -kb planck/rev6_drop -km christoph-cullmann
