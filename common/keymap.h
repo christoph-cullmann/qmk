@@ -137,3 +137,14 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
     return state;
 }
+
+// Simplify unused magic config functions
+#ifndef MAGIC_ENABLE
+uint8_t mod_config(uint8_t mod) { return mod; }
+uint16_t keycode_config(uint16_t keycode) { return keycode; }
+#endif
+
+// Reduce marix scanning delay
+#ifndef DIRECT_PINS
+void matrix_io_delay(void) { __asm__ volatile("nop\nnop\nnop\n"); }
+#endif
