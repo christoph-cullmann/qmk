@@ -1,22 +1,24 @@
 # Christoph Cullmann's Layout
 
-Layout with 42 keys based on Miryoku, using Dhorf as base layer:
+Layout with 42 keys based on Miryoku, using Night as base layer:
 
-    dhorf (Oxey)
-      v l h k q  j f o u ,
-      s r n t w  y c a e i
-      z x m d b  p g ' ; .
+  night (CN) (8 likes)
+    b f l k q  p g o u .
+    n s h t m  y c a e i
+    x v j d z  ' w ; / ,
+          r
 
-    SHAI:
-      Alt: 31.42%
-      Rol: 40.03%   (In/Out: 19.86% | 20.17%)
-      One:  1.36%   (In/Out:  0.18% |  1.19%)
-      Red:  3.33%   (Bad:     0.11%)
+  SHAI:
+    Alt: 34.36%
+    Rol: 42.94%   (In/Out: 22.30% | 20.64%)
+    One:  1.97%   (In/Out:  0.58% |  1.38%)
+    Rtl: 44.90%   (In/Out: 22.88% | 22.02%)
+    Red:  3.01%   (Bad:     0.09%)
 
-      SFB: 0.70%
-      SFS: 5.96%    (Red/Alt: 0.98% | 4.98%)
+    SFB: 0.58%
+    SFS: 4.42%    (Red/Alt: 0.78% | 3.64%)
 
-      LH/RH: 48.52% | 51.48%
+    LH/RH: 49.16% | 50.84%
 
 # How to use
 
@@ -40,7 +42,6 @@ or for the Planck
 
 Based on ideas and code from:
 
-- https://oxey.dev/dhorf
 - https://github.com/manna-harbour/miryoku
 - https://github.com/getreuer/qmk-keymap
 - https://github.com/filterpaper/qmk_userspace

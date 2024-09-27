@@ -16,10 +16,10 @@ enum my_layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT(
-    C(KC_X),      KC_V,         KC_L,         KC_H,         KC_K,         KC_Q,            KC_J,           KC_F,         KC_O,         KC_U,         KC_COMM,      KC_PSCR,
-    C(KC_C),      RALT_T(KC_S), LALT_T(KC_R), LCTL_T(KC_N), LSFT_T(KC_T), KC_W,            KC_Y,           RSFT_T(KC_C), RCTL_T(KC_A), LALT_T(KC_E), RALT_T(KC_I), XXXXXXX,
-    C(KC_V),      KC_Z,         KC_X,         KC_M,         LGUI_T(KC_D), KC_B,            KC_P,           RGUI_T(KC_G), KC_QUOT,      KC_SCLN,      KC_DOT,       XXXXXXX,
-                                              MO(_SYM),     KC_SPC,       MO(_NUM),        MO(_NAV),       KC_BSPC,      MO(_FN)
+    C(KC_X),      KC_B,         KC_F,         KC_L,         KC_K,         KC_Q,            KC_P,           KC_G,         KC_O,         KC_U,         KC_DOT,       KC_PSCR,
+    C(KC_C),      RALT_T(KC_N), LALT_T(KC_S), LCTL_T(KC_H), LSFT_T(KC_T), KC_M,            KC_Y,           RSFT_T(KC_C), RCTL_T(KC_A), LALT_T(KC_E), RALT_T(KC_I), XXXXXXX,
+    C(KC_V),      KC_X,         KC_V,         KC_J,         LGUI_T(KC_D), KC_Z,            KC_QUOT,        RGUI_T(KC_W), KC_SCLN,      KC_SLSH,      KC_COMM,      XXXXXXX,
+                                              MO(_SYM),     KC_R,         MO(_NUM),        MO(_NAV),       KC_SPC,       MO(_FN)
 ),
 
 [_NUM] = LAYOUT(
