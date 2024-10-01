@@ -1,6 +1,6 @@
 # Christoph Cullmann's Layout
 
-Layout with 42 keys based on Miryoku, using Night as base layer:
+Layout with 34 keys based on Miryoku, using Night as base layer:
 
   night (CN) (8 likes)
     b f l k q  p g o u .
