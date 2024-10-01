@@ -8,10 +8,6 @@
 // our shared config parts
 #include "common/config.h"
 
-//
-// audio configuration
-//
-
 // fix startup sound
 #define AUDIO_INIT_DELAY
 
