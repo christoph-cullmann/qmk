@@ -28,7 +28,7 @@ This repository is a valid QMK external userspace as documented here:
 
 You need to have a locally setup QMK and use this repo as overlay:
 
- qmk config user.overlay_dir="/home/cullmann/data/qmk/christoph-cullmann"
+ qmk config user.overlay_dir="/data/home/cullmann/data/qmk/christoph-cullmann"
 
 To use my keymaps, do for the Corne
 
@@ -37,6 +37,10 @@ To use my keymaps, do for the Corne
 or for the Planck
 
  qmk flash -kb planck/rev6_drop -km christoph-cullmann
+
+or for the Ferris
+
+ qmk flash -kb ferris/sweep -km christoph-cullmann
 
 # Foundation
 

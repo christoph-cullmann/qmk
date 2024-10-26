@@ -98,6 +98,8 @@ uint16_t achordion_streak_chord_timeout(
   }
 }
 
+#ifndef NO_LED
+
 void keyboard_post_init_user(void) {
     // always use the same effect
     rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING);
@@ -137,6 +139,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
     return state;
 }
+
+#endif
 
 // Simplify unused magic config functions
 #ifndef MAGIC_ENABLE
