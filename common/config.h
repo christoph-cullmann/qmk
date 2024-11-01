@@ -15,24 +15,25 @@
 // deactivate more features
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
+#define NO_ACTION_ONESHOT
 #define NO_MUSIC_MODE
 
 // enable NKRO by default
 #define FORCE_NKRO
 
-// many settings taken from https://github.com/getreuer/qmk-keymap
+// many settings taken from https://github.com/filterpaper/qmk_userspace
 
-// don't confuse apps
-#define TAP_CODE_DELAY 5
-
-// home row mods
-#define TAPPING_TERM 170
+// Tap-hold settings
+#define TAPPING_TERM 230
 #define TAPPING_TERM_PER_KEY
-#define PERMISSIVE_HOLD
-#define QUICK_TAP_TERM_PER_KEY
+#define PERMISSIVE_HOLD_PER_KEY
+#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 
-// enable streak detection
-#define ACHORDION_STREAK
+// Input intervals
+#define QUICK_TAP_TERM TAPPING_TERM - 100
+#define SHIFT_TAP_TERM TAPPING_TERM - 80
+#define COMBO_IDLE_MS  TAPPING_TERM + 100
+#define INPUT_IDLE_MS  QUICK_TAP_TERM
 
 //
 // underglow configuration
