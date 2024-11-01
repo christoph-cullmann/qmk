@@ -52,80 +52,50 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-// parts taken from https://github.com/filterpaper/qmk_userspace
+// many settings taken from https://github.com/getreuer/qmk-keymap
 
-// Convert 5-bit packed mod-tap modifiers to 8-bit packed MOD_MASK modifiers
-#define MOD_TAP_GET_MOD_BITS(k) (((k) & 0x0f00) >> (((k) & 0x1000) ? 4 : 8))
-// Basic keycode filter for tap-hold keys
-#define GET_TAP_KEYCODE(k) ((k) & 0xff)
+#include "features/achordion.h"
 
-// Tap-hold decision helper macros
-#define IS_LAYER_TAP(k)     (IS_QK_LAYER_TAP(k) && QK_LAYER_TAP_GET_LAYER(k))
-#define IS_SHORTCUT(k)      (IS_QK_LAYER_TAP(k) && !QK_LAYER_TAP_GET_LAYER(k))
-#define IS_MOD_TAP_SHIFT(k) (IS_QK_MOD_TAP(k) && (k) & (QK_LSFT))
-#define IS_MOD_TAP_CAG(k)   (IS_QK_MOD_TAP(k) && (k) & (QK_LCTL|QK_LALT|QK_LGUI))
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+  if (!process_achordion(keycode, record)) { return false; }
+  return true;
+}
 
-#define IS_HOMEROW(r) (r->event.key.row == 1 || r->event.key.row == 5)
-#define IS_HOMEROW_SHIFT(k, r) (IS_HOMEROW(r) && IS_MOD_TAP_SHIFT(k))
-#define IS_HOMEROW_CAG(k, r)   (IS_HOMEROW(r) && IS_MOD_TAP_CAG(k))
+void matrix_scan_user(void) {
+  achordion_task();
+}
 
-#define IS_TYPING(k) ((uint8_t)(k) <= KC_Z && last_input_activity_elapsed() < INPUT_IDLE_MS)
-
-#define IS_UNILATERAL(r, n) ( \
-    (r->event.key.row == 1 && on_left_hand(n.event.key)) || \
-    (r->event.key.row == 5 && !on_left_hand(n.event.key)) )
-
-static uint_fast16_t inter_keycode;
-static keyrecord_t   inter_record;
-
-bool pre_process_record_user(uint16_t keycode, keyrecord_t *record) {
-    static   bool  is_pressed[UINT8_MAX];
-    uint16_t const tap_keycode = GET_TAP_KEYCODE(keycode);
-
-    if (record->event.pressed) {
-        // Press the tap keycode if the tap-hold key follows an alphabet key swiftly
-        if ((IS_HOMEROW_CAG(keycode, record) || IS_SHORTCUT(keycode)) && IS_TYPING(inter_keycode)) {
-            is_pressed[tap_keycode] = true;
-            record->keycode         = tap_keycode;
-        }
-        // Cache incoming input for in-progress and subsequent tap-hold decisions
-        inter_keycode = keycode;
-        inter_record  = *record;
-    }
-
-    // Release the pressed tap keycode
-    else if (is_pressed[tap_keycode]) {
-        is_pressed[tap_keycode] = false;
-        record->keycode         = tap_keycode;
-    }
-
-    return true;
+bool achordion_chord(uint16_t tap_hold_keycode,
+                     keyrecord_t* tap_hold_record,
+                     uint16_t other_keycode,
+                     keyrecord_t* other_record) {
+  // follow the opposite hands rule.
+  return on_left_hand(tap_hold_record->event.key) !=
+         on_left_hand(other_record->event.key);
 }
 
 
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    // Tap the mod-tap key with an overlapping non-Shift key on the same hand
-    // or the shortcut key with any overlapping key
-    if ((IS_UNILATERAL(record, inter_record) && !IS_MOD_TAP_SHIFT(inter_keycode)) || IS_SHORTCUT(keycode)) {
-        record->tap.count++;
-        process_record(record);
-        return false;
-    }
-
-    // Activate layer hold with another key press
-    else return IS_LAYER_TAP(keycode);
+uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
+  switch (tap_hold_keycode) {
+    default:
+      return 800;  // Use a timeout of 800 ms.
+  }
 }
 
+uint16_t achordion_streak_chord_timeout(
+    uint16_t tap_hold_keycode, uint16_t next_keycode) {
+  // Disable streak detection on LT keys.
+  if (IS_QK_LAYER_TAP(tap_hold_keycode)) {
+    return 0;
+  }
 
-bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
-    // Enable Shift with a nested key press
-    return IS_HOMEROW_SHIFT(keycode, record);
-}
-
-
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    // Shorten interval for Shift
-    return IS_HOMEROW_SHIFT(keycode, record) ? SHIFT_TAP_TERM : TAPPING_TERM;
+  // Otherwise, tap_hold_keycode is a mod-tap key.
+  const uint8_t mod = mod_config(QK_MOD_TAP_GET_MODS(tap_hold_keycode));
+  if ((mod & (MOD_LSFT | MOD_RSFT)) != 0) {
+    return 100;  // A short streak timeout for Shift mod-tap keys.
+  } else {
+    return 220;  // A longer timeout otherwise.
+  }
 }
 
 #ifndef NO_LED
