@@ -24,14 +24,14 @@
 // many settings taken from https://github.com/filterpaper/qmk_userspace
 
 // Tap-hold settings
-#define TAPPING_TERM 200
+#define TAPPING_TERM 230
 #define TAPPING_TERM_PER_KEY
 #define PERMISSIVE_HOLD_PER_KEY
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 
 // Input intervals
-#define QUICK_TAP_TERM TAPPING_TERM - 70
-#define SHIFT_TAP_TERM TAPPING_TERM - 50
+#define QUICK_TAP_TERM TAPPING_TERM - 100
+#define SHIFT_TAP_TERM TAPPING_TERM - 80
 #define COMBO_IDLE_MS  TAPPING_TERM + 100
 #define INPUT_IDLE_MS  QUICK_TAP_TERM
 
