@@ -135,20 +135,20 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             rgblight_sethsv_noeeprom(HSV_WHITE);
             break;
 
-        case _SYM:
-            rgblight_sethsv_noeeprom(HSV_RED);
-            break;
-
         case _NUM:
             rgblight_sethsv_noeeprom(HSV_GREEN);
             break;
 
-        case _FUN:
-            rgblight_sethsv_noeeprom(HSV_BLUE);
-            break;
-
         case _NAV:
             rgblight_sethsv_noeeprom(HSV_GOLD);
+            break;
+
+        case _SYM:
+            rgblight_sethsv_noeeprom(HSV_RED);
+            break;
+
+        case _FUN:
+            rgblight_sethsv_noeeprom(HSV_BLUE);
             break;
 
         default:
