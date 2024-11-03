@@ -2,6 +2,7 @@
 
 Layout with 34 keys based on Miryoku, using Night as base layer:
 
+```
   night (CN) (8 likes)
     b f l k q  p g o u .
     n s h t m  y c a e i
@@ -19,6 +20,7 @@ Layout with 34 keys based on Miryoku, using Night as base layer:
     SFS: 4.42%    (Red/Alt: 0.78% | 3.64%)
 
     LH/RH: 49.16% | 50.84%
+```
 
 # How to use
 
@@ -28,19 +30,27 @@ This repository is a valid QMK external userspace as documented here:
 
 You need to have a locally setup QMK and use this repo as overlay:
 
+```zsh
  qmk config user.overlay_dir="/data/home/cullmann/data/qmk/christoph-cullmann"
+```
 
 To use my keymaps, do for the Corne
 
+```zsh
  qmk flash -kb crkbd -km christoph-cullmann
+```
 
 or for the Planck
 
+```zsh
  qmk flash -kb planck/rev6_drop -km christoph-cullmann
+```
 
 or for the Ferris
 
+```zsh
  qmk flash -kb ferris/sweep -km christoph-cullmann
+```
 
 # Foundation
 
