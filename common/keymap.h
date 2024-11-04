@@ -91,6 +91,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // many settings taken from https://github.com/getreuer/qmk-keymap
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
+  switch (keycode) {
+    // slower for slow fingers
+    case CC_N:
+    case CC_S:
+    case CC_E:
+    case CC_I:
+      return TAPPING_TERM + 15;
+    default:
+      return TAPPING_TERM;
+  }
+}
+
 #include "features/achordion.h"
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
