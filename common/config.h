@@ -29,7 +29,9 @@
 #define TAPPING_TERM 170
 #define TAPPING_TERM_PER_KEY
 #define PERMISSIVE_HOLD
-#define QUICK_TAP_TERM_PER_KEY
+
+// no auto repeat stuff
+#define QUICK_TAP_TERM 0
 
 // enable streak detection
 #define ACHORDION_STREAK
