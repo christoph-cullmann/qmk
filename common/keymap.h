@@ -164,7 +164,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     const uint8_t layer = get_highest_layer(state);
     switch (layer) {
         case _DEF:
-            rgblight_sethsv_noeeprom(HSV_WHITE);
+            rgblight_sethsv_noeeprom(HSV_RED);
             break;
 
         case _NUM:
@@ -176,7 +176,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             break;
 
         case _SYM:
-            rgblight_sethsv_noeeprom(HSV_RED);
+            rgblight_sethsv_noeeprom(HSV_WHITE);
             break;
 
         case _FUN:
