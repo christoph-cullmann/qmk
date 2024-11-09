@@ -5,10 +5,9 @@
 
 #include QMK_KEYBOARD_H
 
-// Returns true if `pos` on the left hand of the keyboard, false if right.
-static bool on_left_hand(keypos_t pos)
+char chordal_hold_handedness_user(keypos_t key)
 {
-    return pos.row < MATRIX_ROWS / 2;
+    return (key.row < MATRIX_ROWS / 2) ? 'L' : 'R';
 }
 
 // layout helper macro, we just use 42 keys

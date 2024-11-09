@@ -20,21 +20,13 @@
 // enable NKRO by default
 #define FORCE_NKRO
 
-// many settings taken from https://github.com/getreuer/qmk-keymap
-
-// don't confuse apps
-#define TAP_CODE_DELAY 5
-
 // home row mods
-#define TAPPING_TERM 170
-#define TAPPING_TERM_PER_KEY
+#define CHORDAL_HOLD
 #define PERMISSIVE_HOLD
+#define TAPPING_TERM 250
 
 // no auto repeat stuff
 #define QUICK_TAP_TERM 0
-
-// enable streak detection
-#define ACHORDION_STREAK
 
 //
 // underglow configuration
