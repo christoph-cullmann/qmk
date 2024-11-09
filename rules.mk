@@ -10,9 +10,6 @@ MOUSEKEY_ENABLE = no
 MUSIC_ENABLE = no
 SPACE_CADET_ENABLE = no
 
-# add achordion to improve home row modifiers
-SRC += features/achordion.c
-
 # add bongocat & luna for OLEDs
 ifeq ($(strip $(OLED_ENABLE)), yes)
     SRC += features/oled_bongocat.c
