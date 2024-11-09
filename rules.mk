@@ -21,3 +21,6 @@ endif
 
 # good optimizations
 LTO_ENABLE = yes
+
+# debounce per key
+DEBOUNCE_TYPE = sym_eager_pk
