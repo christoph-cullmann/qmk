@@ -5,7 +5,7 @@
 
 #include QMK_KEYBOARD_H
 
-char chordal_hold_handedness_user(keypos_t key)
+char chordal_hold_handedness(keypos_t key
 {
     return ((key.row < 3) || (key.row == 3 && key.col < 3) || (key.row == 7 && key.col > 2)) ? 'L' : 'R';
 }

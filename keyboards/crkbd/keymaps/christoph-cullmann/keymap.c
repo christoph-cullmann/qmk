@@ -5,7 +5,7 @@
 
 #include QMK_KEYBOARD_H
 
-char chordal_hold_handedness_user(keypos_t key)
+char chordal_hold_handedness(keypos_t key
 {
     return (key.row < MATRIX_ROWS / 2) ? 'L' : 'R';
 }
