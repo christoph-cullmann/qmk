@@ -89,6 +89,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+char chordal_hold_handedness(keypos_t key)
+{
+    // special handle thumb keys
+    if (key.row == 3 || key.row == 7) return '*';
+    return (key.row < MATRIX_ROWS / 2) ? 'L' : 'R';
+}
+
+bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
+                      uint16_t other_keycode, keyrecord_t* other_record) {
+    // Allow hold between any pair of mod-tap keys.
+    if (IS_QK_MOD_TAP(tap_hold_keycode) && IS_QK_MOD_TAP(other_keycode)) {
+        return true;
+    }
+
+    // Otherwise defer to the opposite hands rule.
+    return get_chordal_hold_default(tap_hold_record, other_record);
+}
+
 #ifndef NO_LED
 
 void keyboard_post_init_user(void) {
