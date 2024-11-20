@@ -7,6 +7,8 @@
 
 char chordal_hold_handedness(keypos_t key)
 {
+    // special handle thumb keys
+    if (key.row == 3 || key.row == 7) return '*';
     return (key.row < MATRIX_ROWS / 2) ? 'L' : 'R';
 }
 

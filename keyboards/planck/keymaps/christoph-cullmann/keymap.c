@@ -7,7 +7,9 @@
 
 char chordal_hold_handedness(keypos_t key)
 {
-    return ((key.row < 3) || (key.row == 3 && key.col < 3) || (key.row == 7 && key.col > 2)) ? 'L' : 'R';
+    // special handle thumb keys
+    if (key.row == 3 || key.row == 7) return '*';
+    return (key.row < MATRIX_ROWS / 2) ? 'L' : 'R';
 }
 
 // layout helper macro, we just use 42 keys
