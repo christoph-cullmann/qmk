@@ -5,9 +5,6 @@
 
 #pragma once
 
-// no more than 8 layers
-#define LAYER_STATE_8BIT
-
 // we don't have any lock switches
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
@@ -27,7 +24,7 @@
 // home row mods
 #define CHORDAL_HOLD
 #define PERMISSIVE_HOLD
-#define TAPPING_TERM 250
+#define TAPPING_TERM 175
 
 // no auto repeat stuff
 #define QUICK_TAP_TERM 0
