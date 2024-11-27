@@ -10,8 +10,3 @@
 
 // select hand configuration
 #define SPLIT_USB_DETECT
-
-// tranfer enough info for the stuff we render on the OLEDs
-#define SPLIT_MODS_ENABLE
-#define SPLIT_LED_STATE_ENABLE
-#define SPLIT_LAYER_STATE_ENABLE
