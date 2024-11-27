@@ -252,7 +252,7 @@ void render_bongocat(void) {
     uint32_t  const input_timer = last_matrix_activity_time();
 
     if (timer_elapsed32(input_timer) > OLED_TIMEOUT) {
-        oled_off();
+        // already done by luna oled_off();
     } else if (timer_elapsed(frame_timer) > FRAME_DURATION) {
         frame_timer = timer_read();
         animate_cat(timer_elapsed32(input_timer));
