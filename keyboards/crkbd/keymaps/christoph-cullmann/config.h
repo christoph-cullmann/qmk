@@ -7,6 +7,3 @@
 
 // our shared config parts
 #include "common/config.h"
-
-// select hand configuration
-#define SPLIT_USB_DETECT
