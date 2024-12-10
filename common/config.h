@@ -29,9 +29,6 @@
 // no auto repeat stuff
 #define QUICK_TAP_TERM 0
 
-// master has the USB and is the left one
-#define MASTER_LEFT
-
 // tranfer enough info for the stuff we render on the OLEDs
 #define SPLIT_LAYER_STATE_ENABLE
 #define SPLIT_LED_STATE_ENABLE
