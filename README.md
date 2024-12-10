@@ -37,7 +37,7 @@ qmk config user.overlay_dir="/data/home/cullmann/data/qmk/christoph-cullmann"
 To use my keymaps, do for the Corne
 
 ```zsh
-qmk flash -kb crkbd -km christoph-cullmann
+qmk flash -kb crkbd/rev1 -km christoph-cullmann
 ```
 
 or for the Planck
