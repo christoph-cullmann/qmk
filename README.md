@@ -34,22 +34,30 @@ You need to have a locally setup QMK and use this repo as overlay:
 qmk config user.overlay_dir="/data/home/cullmann/data/qmk/christoph-cullmann"
 ```
 
-To use my keymaps, do for the Corne
+To use my keymaps, one can do:
+
+Aurora Sweep
+
+```zsh
+qmk flash -kb splitkb/aurora/sweep/rev1 -km christoph-cullmann
+```
+
+Ferris Sweep
+
+```zsh
+qmk flash -kb ferris/sweep -km christoph-cullmann
+```
+
+Corne
 
 ```zsh
 qmk flash -kb crkbd/rev1 -km christoph-cullmann
 ```
 
-or for the Planck
+Planck
 
 ```zsh
 qmk flash -kb planck/rev6_drop -km christoph-cullmann
-```
-
-or for the Ferris
-
-```zsh
-qmk flash -kb ferris/sweep -km christoph-cullmann
 ```
 
 # Foundation

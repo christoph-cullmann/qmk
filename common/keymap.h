@@ -107,7 +107,7 @@ bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
     return get_chordal_hold_default(tap_hold_record, other_record);
 }
 
-#ifndef NO_LED
+#ifndef CC_NO_LED
 
 void keyboard_post_init_user(void) {
     // always use the same effect
