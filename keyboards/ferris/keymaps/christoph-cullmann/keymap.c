@@ -5,7 +5,7 @@
 
 #include QMK_KEYBOARD_H
 
-// layout helper macro, we just use 42 keys
+// layout helper macro, we just use 34 keys
 #undef LAYOUT
 #define LAYOUT(\
 K00,   K01,   K02,   K03,   K04,                 K05,   K06,   K07,   K08,   K09,\
