@@ -5,15 +5,6 @@
 
 #pragma once
 
-// we don't have any lock switches
-#undef LOCKING_SUPPORT_ENABLE
-#undef LOCKING_RESYNC_ENABLE
-
-// deactivate more features
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
-#define NO_MUSIC_MODE
-
 // enable NKRO by default
 #define FORCE_NKRO
 
@@ -34,9 +25,6 @@
 #define SPLIT_LED_STATE_ENABLE
 #define SPLIT_MODS_ENABLE
 #define SPLIT_OLED_ENABLE
-
-// select hand configuration
-#define SPLIT_USB_DETECT
 
 //
 // underglow configuration
