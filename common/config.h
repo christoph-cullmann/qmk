@@ -35,6 +35,9 @@
 #define SPLIT_MODS_ENABLE
 #define SPLIT_OLED_ENABLE
 
+// select hand configuration
+#define SPLIT_USB_DETECT
+
 //
 // underglow configuration
 //
