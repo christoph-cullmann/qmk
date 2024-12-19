@@ -96,17 +96,6 @@ char chordal_hold_handedness(keypos_t key)
     return (key.row < MATRIX_ROWS / 2) ? 'L' : 'R';
 }
 
-bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t* tap_hold_record,
-                      uint16_t other_keycode, keyrecord_t* other_record) {
-    // Allow hold between any pair of mod-tap keys.
-    if (IS_QK_MOD_TAP(tap_hold_keycode) && IS_QK_MOD_TAP(other_keycode)) {
-        return true;
-    }
-
-    // Otherwise defer to the opposite hands rule.
-    return get_chordal_hold_default(tap_hold_record, other_record);
-}
-
 #ifndef CC_NO_LED
 
 void keyboard_post_init_user(void) {
@@ -157,15 +146,4 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
-#endif
-
-// Simplify unused magic config functions
-#ifndef MAGIC_ENABLE
-uint8_t mod_config(uint8_t mod) { return mod; }
-uint16_t keycode_config(uint16_t keycode) { return keycode; }
-#endif
-
-// Reduce marix scanning delay
-#ifndef DIRECT_PINS
-void matrix_io_delay(void) { __asm__ volatile("nop\nnop\nnop\n"); }
 #endif
