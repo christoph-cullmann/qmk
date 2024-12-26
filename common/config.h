@@ -12,21 +12,13 @@
 // from its 10ms default to the 1ms minimum that USB 1.x (Full Speed) allows:
 #define USB_POLLING_INTERVAL_MS 1
 
-// many settings taken from https://github.com/getreuer/qmk-keymap
-
-// don't confuse apps
-#define TAP_CODE_DELAY 5
-
 // home row mods
-#define TAPPING_TERM 170
-#define TAPPING_TERM_PER_KEY
+#define CHORDAL_HOLD
 #define PERMISSIVE_HOLD
+#define TAPPING_TERM 175
 
 // no auto repeat stuff
 #define QUICK_TAP_TERM 0
-
-// enable streak detection
-#define ACHORDION_STREAK
 
 // tranfer enough info for the stuff we render on the OLEDs
 #define SPLIT_LAYER_STATE_ENABLE

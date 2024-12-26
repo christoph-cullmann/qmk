@@ -20,12 +20,6 @@ K20,   K21,   K22,   K23,   K24,                 K25,   K26,   K27,   K28,   K29
                      K30,   K31,                 K32,   K33\
 )
 
-// Returns true if `pos` on the left hand of the keyboard, false if right.
-static bool on_left_hand(keypos_t pos)
-{
-    return pos.row < MATRIX_ROWS / 2;
-}
-
 // no led
 #define CC_NO_LED
 
