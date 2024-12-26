@@ -89,13 +89,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-char chordal_hold_handedness(keypos_t key)
-{
-    // special handle thumb keys
-    if (key.row == 3 || key.row == 7) return '*';
-    return (key.row < MATRIX_ROWS / 2) ? 'L' : 'R';
-}
-
 #ifndef CC_NO_LED
 
 void keyboard_post_init_user(void) {

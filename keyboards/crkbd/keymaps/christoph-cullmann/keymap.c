@@ -20,5 +20,11 @@ KC_NO, K20,   K21,   K22,   K23,   K24,          K25,   K26,   K27,   K28,   K29
                      KC_NO, K30,   K31,          K32,   K33,   KC_NO\
 )
 
+// define handness manually, just to be sure
+char chordal_hold_handedness(keypos_t key)
+{
+    return (key.row < MATRIX_ROWS / 2) ? 'L' : 'R';
+}
+
 // our shared 42 keys keymap
 #include "common/keymap.h"
