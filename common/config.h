@@ -20,12 +20,6 @@
 // no auto repeat stuff
 #define QUICK_TAP_TERM 0
 
-// tranfer enough info for the stuff we render on the OLEDs
-#define SPLIT_LAYER_STATE_ENABLE
-#define SPLIT_LED_STATE_ENABLE
-#define SPLIT_MODS_ENABLE
-#define SPLIT_OLED_ENABLE
-
 //
 // underglow configuration
 //
