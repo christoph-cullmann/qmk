@@ -46,6 +46,7 @@ Ferris Sweep
 
 ```zsh
 qmk flash -kb ferris/sweep -km christoph-cullmann
+qmk flash -kb ferris/sweep -km christoph-cullmann -e CONVERT_TO=helios
 ```
 
 Corne
