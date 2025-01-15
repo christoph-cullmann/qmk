@@ -15,7 +15,7 @@
 // home row mods
 #define CHORDAL_HOLD
 #define PERMISSIVE_HOLD
-#define TAPPING_TERM 175
+#define TAPPING_TERM 200
 
 // no auto repeat stuff
 #define QUICK_TAP_TERM 0
