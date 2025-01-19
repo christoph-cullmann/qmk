@@ -23,7 +23,7 @@ KC_NO, KC_NO, KC_NO, K30,   K31,   KC_NO, KC_NO, K32,   K33,   KC_NO, KC_NO, KC_
 // define handness manually, just to be sure
 char chordal_hold_handedness(keypos_t key)
 {
-    return ((pos.row < 3) || (pos.row == 3 && pos.col < 3) || (pos.row == 7 && pos.col > 2)) ? 'L' : 'R';
+    return ((key.row < 3) || (key.row == 3 && key.col < 3) || (key.row == 7 && key.col > 2)) ? 'L' : 'R';
 }
 
 // our shared 42 keys keymap
