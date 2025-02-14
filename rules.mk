@@ -1,6 +1,9 @@
 # Enable N-Key Rollover
 NKRO_ENABLE = yes
 
+# use more snappy debounce algo
+DEBOUNCE_TYPE = asym_eager_defer_pk
+
 # add bongocat & luna for OLEDs
 ifeq ($(strip $(OLED_ENABLE)), yes)
     SRC += features/oled_bongocat.c

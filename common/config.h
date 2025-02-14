@@ -12,6 +12,9 @@
 // from its 10ms default to the 1ms minimum that USB 1.x (Full Speed) allows:
 #define USB_POLLING_INTERVAL_MS 1
 
+// try to be nice to the old switches I did harvest
+#define DEBOUNCE 10
+
 // home row mods
 #define CHORDAL_HOLD
 #define PERMISSIVE_HOLD
