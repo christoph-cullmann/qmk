@@ -15,15 +15,15 @@
 // try to be nice to the old switches I did harvest
 #define DEBOUNCE 10
 
-// Unfortunately, some applications drop or misorder fast key events. This is a
+// Unfortunately, some applications drop or swap fast key events. This is a
 // partial fix to slow down the rate at which macros are sent.
 #define TAP_CODE_DELAY 5
 
 // home row mods
 #define CHORDAL_HOLD
 #define PERMISSIVE_HOLD
-#define TAPPING_TERM 180
-#define TAPPING_TERM_SLOW 220
+#define TAPPING_TERM 200
+#define TAPPING_TERM_SLOW 250
 #define TAPPING_TERM_PER_KEY
 
 // no auto repeat stuff
