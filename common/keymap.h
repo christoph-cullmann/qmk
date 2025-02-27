@@ -98,6 +98,10 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
     case CC_I:
     case CC_M:
     case CC_Y:
+    case CC_SYM:
+    case CC_NUM:
+    case CC_NAV:
+    case CC_FUN:
       return TAPPING_TERM_SLOW;
     default:
       return TAPPING_TERM;
