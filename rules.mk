@@ -5,7 +5,7 @@ NKRO_ENABLE = yes
 LTO_ENABLE = yes
 
 # use more snappy debounce algo
-DEBOUNCE_TYPE = asym_eager_defer_pk
+DEBOUNCE_TYPE = sym_eager_pk
 
 # add bongocat & luna for OLEDs
 ifeq ($(strip $(OLED_ENABLE)), yes)
