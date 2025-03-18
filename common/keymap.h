@@ -104,6 +104,20 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
   }
 }
 
+uint16_t get_tap_flow(uint16_t keycode, keyrecord_t* record, uint16_t prev_keycode) {
+  switch (keycode) {
+    // no filter for thumb keys
+    case CC_SYM:
+    case CC_NUM:
+    case CC_NAV:
+    case CC_FUN:
+       return 0;
+
+    default:
+      return g_tap_flow_term;
+  }
+}
+
 #ifndef CC_NO_LED
 
 void keyboard_post_init_user(void) {
