@@ -89,21 +89,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
-  switch (keycode) {
-    // slower for slow fingers and meta keys
-    case CC_N:
-    case CC_S:
-    case CC_E:
-    case CC_I:
-    case CC_M:
-    case CC_Y:
-      return TAPPING_TERM_SLOW;
-    default:
-      return TAPPING_TERM;
-  }
-}
-
 #ifndef CC_NO_LED
 
 void keyboard_post_init_user(void) {
