@@ -6,7 +6,7 @@
 #pragma once
 
 // enable NKRO by default
-#define FORCE_NKRO
+#define NKRO_DEFAULT_ON 1
 
 // Reduce input latency by lowering the USB polling interval
 // from its 10ms default to the 1ms minimum that USB 1.x (Full Speed) allows:
