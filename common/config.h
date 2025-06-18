@@ -20,6 +20,9 @@
 // no auto repeat stuff
 #define QUICK_TAP_TERM 0
 
+// use Flow Tap - https://docs.qmk.fm/tap_hold#flow-tap
+#define FLOW_TAP_TERM 150
+
 //
 // underglow configuration
 //
