@@ -35,23 +35,6 @@ enum my_layers {
 #define CC_NAV LT(_NAV, KC_SPC)
 #define CC_FUN LT(_FUN, KC_EQL)
 
-uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t* record,
-                           uint16_t prev_keycode) {
-    if (is_flow_tap_key(keycode) && is_flow_tap_key(prev_keycode)) {
-        switch (keycode) {
-            case CC_SYM:
-            case CC_NUM:
-            case CC_NAV:
-            case CC_FUN:
-              return 0; // filter out thumb keys
-
-            default:
-              return FLOW_TAP_TERM; // normal timeout
-        }
-    }
-    return 0;  // Disable Flow Tap.
-}
-
 // our keymap
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
