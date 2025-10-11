@@ -28,6 +28,7 @@ COMMAND_ENABLE = no
 SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE = no
 UNICODE_ENABLE = no
+COMBO_ENABLE = no
 
 # add bongocat & luna for OLEDs
 ifeq ($(strip $(OLED_ENABLE)), yes)
