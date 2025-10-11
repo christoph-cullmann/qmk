@@ -8,7 +8,12 @@ LTO_ENABLE = yes
 DEBOUNCE_TYPE = asym_eager_defer_pk
 
 # disable some stuff we don't need
+
+# no mouse emulation
 MOUSEKEY_ENABLE = no
+
+# no extrakeys disables stuff like the media keys and system volume control
+EXTRAKEY_ENABLE = no
 
 # add bongocat & luna for OLEDs
 ifeq ($(strip $(OLED_ENABLE)), yes)
