@@ -22,6 +22,8 @@ SHAI:
   LH/RH: 49.16% | 50.84%
 ```
 
+https://www.valorance.org/night/
+
 # How to use
 
 This repository is a valid QMK external userspace as documented here:
