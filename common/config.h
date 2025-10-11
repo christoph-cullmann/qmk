@@ -18,6 +18,16 @@
 #define TAPPING_TERM 250
 #define QUICK_TAP_TERM 0
 
+// we have no lock key
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
+
+// not more than 8 layers
+#define LAYER_STATE_8BIT
+
+// we use no one shot keys
+#define NO_ACTION_ONESHOT
+
 //
 // underglow configuration
 //
