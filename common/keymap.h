@@ -9,9 +9,7 @@ enum my_layers {
   _NUM,
   _NAV,
   _SYM,
-  _FUN,
-  _SUP,
-  _HYP
+  _FUN
 };
 
 // keys with tap hofd functions
@@ -27,9 +25,6 @@ enum my_layers {
 #define CC_E LALT_T(KC_E)
 #define CC_I RALT_T(KC_I)
 
-#define CC_D LT(_SUP, KC_D)
-#define CC_W LT(_HYP, KC_W)
-
 #define CC_SYM LT(_SYM, KC_MINS)
 #define CC_NUM LT(_NUM, KC_R)
 #define CC_NAV LT(_NAV, KC_SPC)
@@ -41,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_DEF] = LAYOUT(
     KC_B,    KC_F,    KC_L,    KC_K,    KC_Q,    KC_P,    KC_G,    KC_O,    KC_U,    KC_DOT,
     CC_N,    CC_S,    CC_H,    CC_T,    CC_M,    CC_Y,    CC_C,    CC_A,    CC_E,    CC_I,
-    KC_X,    KC_V,    KC_J,    CC_D,    KC_Z,    KC_QUOT, CC_W,    KC_SCLN, KC_SLSH, KC_COMM,
+    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,    KC_QUOT, KC_W,    KC_SCLN, KC_SLSH, KC_COMM,
                                CC_SYM,  CC_NUM,  CC_NAV,  CC_FUN
 ),
 
@@ -71,20 +66,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F11,  KC_F4,   KC_F5,   KC_F6,   KC_DEL,  KC_RGUI, KC_RSFT, KC_RCTL, KC_LALT, KC_RALT,
     KC_F10,  KC_F1,   KC_F2,   KC_F3,   KC_INS,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                KC_BSPC, KC_ESC,  XXXXXXX, XXXXXXX
-),
-
-[_SUP] = LAYOUT(
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_LT,   KC_GT,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-),
-
-[_HYP] = LAYOUT(
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 )
 
 };
@@ -122,14 +103,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
         case _FUN:
             rgblight_sethsv_noeeprom(HSV_BLUE);
-            break;
-
-        case _SUP:
-            rgblight_sethsv_noeeprom(HSV_YELLOW);
-            break;
-
-        case _HYP:
-            rgblight_sethsv_noeeprom(HSV_CYAN);
             break;
 
         default:
