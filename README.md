@@ -70,3 +70,5 @@ Based on ideas and code from:
 - https://github.com/manna-harbour/miryoku
 - https://github.com/getreuer/qmk-keymap
 - https://github.com/filterpaper/qmk_userspace
+- https://github.com/malparty/shweep
+- https://github.com/skychil/kombol

@@ -70,6 +70,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+// macros taken from https://github.com/skychil/kombol
+#ifdef COMB
+#undef COMB
+#endif
+
+#define COMB(name, action, ...)  C_##name,
+enum myCombos {
+#include "combos.h"
+};
+#undef COMB
+
+#define COMB(name, action, ...)  const uint16_t PROGMEM name##_combo[] = {__VA_ARGS__, COMBO_END};
+#include "combos.h"
+#undef COMB
+
+#define COMB(name, action, ...)  [C_##name] = COMBO(name##_combo, action),
+combo_t key_combos[] = {
+#include "combos.h"
+};
+#undef COMB
+
 #ifndef CC_NO_LED
 
 void keyboard_post_init_user(void) {
