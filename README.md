@@ -33,7 +33,7 @@ This repository is a valid QMK external userspace as documented here:
 You need to have a locally setup QMK and use this repo as overlay:
 
 ```zsh
-qmk config user.overlay_dir="/data/home/cullmann/data/qmk/christoph-cullmann"
+qmk config user.overlay_dir="/data/home/cullmann/data/qmk/userspace"
 ```
 
 To use my keymaps, one can do:
@@ -41,26 +41,26 @@ To use my keymaps, one can do:
 Aurora Sweep
 
 ```zsh
-qmk flash -kb splitkb/aurora/sweep/rev1 -km christoph-cullmann
+qmk flash -kb splitkb/aurora/sweep/rev1 -km cullmann
 ```
 
 Ferris Sweep
 
 ```zsh
-qmk flash -kb ferris/sweep -km christoph-cullmann
-qmk flash -kb ferris/sweep -km christoph-cullmann -e CONVERT_TO=helios
+qmk flash -kb ferris/sweep -km cullmann
+qmk flash -kb ferris/sweep -km cullmann -e CONVERT_TO=helios
 ```
 
 Corne
 
 ```zsh
-qmk flash -kb crkbd/rev1 -km christoph-cullmann
+qmk flash -kb crkbd/rev1 -km cullmann
 ```
 
 Planck
 
 ```zsh
-qmk flash -kb planck/rev6_drop -km christoph-cullmann
+qmk flash -kb planck/rev6_drop -km cullmann
 ```
 
 # Foundation
