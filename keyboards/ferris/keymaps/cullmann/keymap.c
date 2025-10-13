@@ -20,9 +20,6 @@ K20,   K21,   K22,   K23,   K24,                 K25,   K26,   K27,   K28,   K29
                      K30,   K31,                 K32,   K33\
 )
 
-// no led
-#define CC_NO_LED
-
 // define handness manually, just to be sure
 char chordal_hold_handedness(keypos_t key)
 {

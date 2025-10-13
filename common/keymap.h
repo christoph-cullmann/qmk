@@ -91,12 +91,12 @@ combo_t key_combos[] = {
 };
 #undef COMB
 
-#ifndef CC_NO_LED
+#if defined(RGBLIGHT_ENABLE) || defined(RGB_MATRIX_ENABLE)
 
 void keyboard_post_init_user(void) {
     // always use the same effect
-    rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING);
-    rgblight_set_speed_noeeprom(2);
+    //rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING);
+    //rgblight_set_speed_noeeprom(2);
 
     // trigger init of layer state
     layer_state_set_user(layer_state);

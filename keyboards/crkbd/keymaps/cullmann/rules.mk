@@ -1,5 +1,6 @@
 # set flags we check in common settings
 OLED_ENABLE = yes
+RGBLIGHT_ENABLE = yes
 
 # include common settings
 ROOT_DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
