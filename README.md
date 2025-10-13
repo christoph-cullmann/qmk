@@ -38,17 +38,17 @@ qmk config user.overlay_dir="/data/home/cullmann/data/qmk/userspace"
 
 To use my keymaps, one can do:
 
-Aurora Sweep
-
-```zsh
-qmk flash -kb splitkb/aurora/sweep/rev1 -km cullmann
-```
-
 Ferris Sweep
 
 ```zsh
 qmk flash -kb ferris/sweep -km cullmann
 qmk flash -kb ferris/sweep -km cullmann -e CONVERT_TO=helios
+```
+
+Aurora Sweep
+
+```zsh
+qmk flash -kb splitkb/aurora/sweep/rev1 -km cullmann
 ```
 
 Corne
