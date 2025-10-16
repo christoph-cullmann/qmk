@@ -63,6 +63,12 @@ Planck
 qmk flash -kb planck/rev6_drop -km cullmann
 ```
 
+Fiðrildi
+
+```zsh
+qmk flash -kb fidrildi/v4 -km cullmann
+```
+
 # Foundation
 
 Based on ideas and code from:
