@@ -23,7 +23,8 @@ K20,   K21,   K22,   K23,   K24,                 K25,   K26,   K27,   K28,   K29
 // define handness manually, just to be sure
 char chordal_hold_handedness(keypos_t key)
 {
-    return (key.row < MATRIX_ROWS / 2) ? 'L' : 'R';
+    // fidrildi has matrix where columns dictate the side
+    return (key.col < 5) ? 'L' : 'R';
 }
 
 // our shared 42 keys keymap
