@@ -91,15 +91,6 @@ combo_t key_combos[] = {
 };
 #undef COMB
 
-#if defined(RGBLIGHT_ENABLE) || defined(RGB_MATRIX_ENABLE)
-
-void keyboard_post_init_user(void) {
-    // always use the same effect
-    rgblight_mode_noeeprom(RGB_MATRIX_BREATHING);
-}
-
-#endif
-
 // Simplify unused magic config functions
 #ifndef MAGIC_ENABLE
 uint8_t mod_config(uint8_t mod) { return mod; }
