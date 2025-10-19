@@ -95,42 +95,7 @@ combo_t key_combos[] = {
 
 void keyboard_post_init_user(void) {
     // always use the same effect
-    //rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING);
-    //rgblight_set_speed_noeeprom(2);
-
-    // trigger init of layer state
-    layer_state_set_user(layer_state);
-}
-
-// handle layer changes for backlight
-layer_state_t layer_state_set_user(layer_state_t state) {
-    const uint8_t layer = get_highest_layer(state);
-    switch (layer) {
-        case _DEF:
-            rgblight_sethsv_noeeprom(HSV_RED);
-            break;
-
-        case _NUM:
-            rgblight_sethsv_noeeprom(HSV_GREEN);
-            break;
-
-        case _NAV:
-            rgblight_sethsv_noeeprom(HSV_GOLD);
-            break;
-
-        case _SYM:
-            rgblight_sethsv_noeeprom(HSV_WHITE);
-            break;
-
-        case _FUN:
-            rgblight_sethsv_noeeprom(HSV_BLUE);
-            break;
-
-        default:
-            break;
-    }
-
-    return state;
+    rgblight_mode_noeeprom(RGB_MATRIX_BREATHING);
 }
 
 #endif
