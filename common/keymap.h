@@ -91,6 +91,18 @@ combo_t key_combos[] = {
 };
 #undef COMB
 
+void keyboard_post_init_user(void) {
+#ifdef RGBLIGHT_ENABLE
+    // underglow
+    rgblight_mode_noeeprom(RGBLIGHT_DEFAULT_MODE);
+#endif
+
+#ifdef RGB_MATRIX_ENABLE
+    // per-key
+    rgb_matrix_mode_noeeprom(RGB_MATRIX_DEFAULT_MODE);
+#endif
+}
+
 // Simplify unused magic config functions
 #ifndef MAGIC_ENABLE
 uint8_t mod_config(uint8_t mod) { return mod; }

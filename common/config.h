@@ -57,7 +57,7 @@
 #endif
 
 //
-// per key RGB
+// per-key RGB
 //
 
 #ifdef RGB_MATRIX_ENABLE
