@@ -14,12 +14,15 @@
 
 // Unfortunately, some applications drop or misorder fast key events. This is a
 // partial fix to slow down the rate at which macros are sent.
+// https://github.com/getreuer/qmk-keymap/blob/main/config_getreuer.h
 #define TAP_CODE_DELAY 5
 
 // home row mods - https://docs.qmk.fm/tap_hold
+// https://github.com/getreuer/qmk-keymap/blob/main/config_getreuer.h
 #define CHORDAL_HOLD
 #define PERMISSIVE_HOLD
-#define TAPPING_TERM 250
+#define TAPPING_TERM 240
+#define FLOW_TAP_TERM 100
 #define QUICK_TAP_TERM 0
 
 // Time (in ms) for combo processing

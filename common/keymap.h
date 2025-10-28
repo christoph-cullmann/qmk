@@ -12,7 +12,7 @@ enum my_layers {
   _FUN
 };
 
-// keys with tap hofd functions
+// keys with tap hold functions
 #define CC_N RALT_T(KC_N)
 #define CC_S LALT_T(KC_S)
 #define CC_H LCTL_T(KC_H)
@@ -69,6 +69,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 )
 
 };
+
+#ifdef FLOW_TAP_TERM
+uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t* record,
+                           uint16_t prev_keycode) {
+  // Only apply Flow Tap when following a letter key, and not hotkeys.
+  if (get_tap_keycode(prev_keycode) <= KC_Z &&
+      (get_mods() & (MOD_MASK_CG | MOD_BIT_LALT)) == 0) {
+    switch (keycode) {
+        // home row
+        case CC_N:
+        case CC_S:
+        case CC_H:
+        case CC_T:
+        case CC_M:
+        case CC_Y:
+        case CC_C:
+        case CC_A:
+        case CC_E:
+        case CC_I:
+            return FLOW_TAP_TERM;
+
+        default:
+            return 0;
+    }
+  }
+
+  return 0;  // Disable Flow Tap otherwise.
+}
+#endif  // FLOW_TAP_TERM
 
 // macros taken from https://github.com/skychil/kombol
 #ifdef COMB
