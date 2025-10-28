@@ -5,30 +5,32 @@
 
 // our layers
 enum my_layers {
-  _DEF,
-  _NUM,
-  _NAV,
-  _SYM,
-  _FUN
+    _DEF,
+    _NUM,
+    _NAV,
+    _SYM,
+    _FUN
 };
 
 // keys with tap hold functions
-#define CC_N RALT_T(KC_N)
-#define CC_S LALT_T(KC_S)
-#define CC_H LCTL_T(KC_H)
-#define CC_T LSFT_T(KC_T)
-#define CC_M LGUI_T(KC_M)
+enum my_tap_hold {
+    CC_N = RALT_T(KC_N),
+    CC_S = LALT_T(KC_S),
+    CC_H = LCTL_T(KC_H),
+    CC_T = LSFT_T(KC_T),
+    CC_M = LGUI_T(KC_M),
 
-#define CC_Y RGUI_T(KC_Y)
-#define CC_C RSFT_T(KC_C)
-#define CC_A RCTL_T(KC_A)
-#define CC_E LALT_T(KC_E)
-#define CC_I RALT_T(KC_I)
+    CC_Y = RGUI_T(KC_Y),
+    CC_C = RSFT_T(KC_C),
+    CC_A = RCTL_T(KC_A),
+    CC_E = LALT_T(KC_E),
+    CC_I = RALT_T(KC_I),
 
-#define CC_SYM LT(_SYM, KC_MINS)
-#define CC_NUM LT(_NUM, KC_R)
-#define CC_NAV LT(_NAV, KC_SPC)
-#define CC_FUN LT(_FUN, KC_EQL)
+    CC_SYM = LT(_SYM, KC_MINS),
+    CC_NUM = LT(_NUM, KC_R),
+    CC_NAV = LT(_NAV, KC_SPC),
+    CC_FUN = LT(_FUN, KC_EQL)
+};
 
 // our keymap
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
