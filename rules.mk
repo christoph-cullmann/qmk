@@ -1,6 +1,10 @@
 # we use combos
 COMBO_ENABLE = yes
 
+# we use the caps word feature
+# https://docs.qmk.fm/features/caps_word
+CAPS_WORD_ENABLE = yes
+
 # Enable N-Key Rollover
 NKRO_ENABLE = yes
 
