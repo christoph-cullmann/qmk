@@ -57,13 +57,10 @@
 // no lights if we sleep
 #define RGBLIGHT_SLEEP
 
-// maximal brightness
-#define RGBLIGHT_LIMIT_VAL 150
-
 // default mode
-#define ENABLE_RGBLIGHT_MODE_BREATHING
+#define RGBLIGHT_EFFECT_BREATHING
 #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_BREATHING
-#define RGBLIGHT_EFFECT_BREATHE_MAX RGBLIGHT_LIMIT_VAL
+#define RGBLIGHT_EFFECT_BREATHE_MAX 100
 
 #endif
 
@@ -75,9 +72,6 @@
 
 // no lights if we sleep
 #define RGB_MATRIX_SLEEP
-
-// maximal brightness
-#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
 
 // default mode
 #define ENABLE_RGB_MATRIX_BREATHING

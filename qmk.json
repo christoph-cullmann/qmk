@@ -12,5 +12,6 @@
         ["splitkb/aurora/sweep/rev1", "cullmann"],
         ["crkbd/rev1", "cullmann"],
         ["planck/rev6_drop", "cullmann"]
+        ["fidrildi/v4", "cullmann"]
     ]
 }
