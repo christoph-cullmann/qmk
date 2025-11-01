@@ -57,12 +57,13 @@
 // no lights if we sleep
 #define RGBLIGHT_SLEEP
 
-// default mode
-#define ENABLE_RGBLIGHT_MODE_RAINBOW_SWIRL
-#define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL
-
 // maximal brightness
 #define RGBLIGHT_LIMIT_VAL 150
+
+// default mode
+#define ENABLE_RGBLIGHT_MODE_BREATHING
+#define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_BREATHING
+#define RGBLIGHT_EFFECT_BREATHE_MAX RGBLIGHT_LIMIT_VAL
 
 #endif
 
@@ -75,11 +76,11 @@
 // no lights if we sleep
 #define RGB_MATRIX_SLEEP
 
-// default mode
-#define ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
-#define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_CYCLE_LEFT_RIGHT
-
 // maximal brightness
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
+
+// default mode
+#define ENABLE_RGB_MATRIX_BREATHING
+#define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_BREATHING
 
 #endif
