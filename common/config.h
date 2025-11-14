@@ -24,6 +24,7 @@
 #define TAPPING_TERM 240
 #define FLOW_TAP_TERM 100
 #define QUICK_TAP_TERM 0
+#define SPECULATIVE_HOLD
 
 // Time (in ms) for combo processing
 #define COMBO_TERM 50
