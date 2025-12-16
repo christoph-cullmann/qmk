@@ -26,9 +26,6 @@
 #define QUICK_TAP_TERM 0
 #define SPECULATIVE_HOLD
 
-// Time (in ms) for combo processing
-#define COMBO_TERM 50
-
 // enable caps word with pressing both shifts
 // https://docs.qmk.fm/features/caps_word
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD

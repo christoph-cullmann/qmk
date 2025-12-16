@@ -101,27 +101,6 @@ uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t* record,
 }
 #endif  // FLOW_TAP_TERM
 
-// macros taken from https://github.com/skychil/kombol
-#ifdef COMB
-#undef COMB
-#endif
-
-#define COMB(name, action, ...)  C_##name,
-enum myCombos {
-#include "combos.h"
-};
-#undef COMB
-
-#define COMB(name, action, ...)  const uint16_t PROGMEM name##_combo[] = {__VA_ARGS__, COMBO_END};
-#include "combos.h"
-#undef COMB
-
-#define COMB(name, action, ...)  [C_##name] = COMBO(name##_combo, action),
-combo_t key_combos[] = {
-#include "combos.h"
-};
-#undef COMB
-
 void keyboard_post_init_user(void) {
 #ifdef RGBLIGHT_ENABLE
     // underglow
