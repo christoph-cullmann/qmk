@@ -112,10 +112,3 @@ void keyboard_post_init_user(void) {
     rgb_matrix_mode_noeeprom(RGB_MATRIX_DEFAULT_MODE);
 #endif
 }
-
-// Simplify unused magic config functions
-#ifndef MAGIC_ENABLE
-uint8_t mod_config(uint8_t mod) { return mod; }
-uint16_t keycode_config(uint16_t keycode) { return keycode; }
-#endif
-
