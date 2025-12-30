@@ -36,8 +36,10 @@
 // not more than 8 layers
 #define LAYER_STATE_8BIT
 
-// we use no one shot keys
+// disable more not used stuff
+#define NO_ACTION_MACRO
 #define NO_ACTION_ONESHOT
+#define NO_ACTION_FUNCTION
 
 //
 // RGB underglow
