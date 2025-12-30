@@ -5,10 +5,6 @@
 
 #pragma once
 
-// Reduce input latency by lowering the USB polling interval
-// from its 10ms default to the 1ms minimum that USB 1.x (Full Speed) allows:
-#define USB_POLLING_INTERVAL_MS 1
-
 // Unfortunately, some applications drop or misorder fast key events. This is a
 // partial fix to slow down the rate at which macros are sent.
 // https://github.com/getreuer/qmk-keymap/blob/main/config_getreuer.h
