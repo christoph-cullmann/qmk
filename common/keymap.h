@@ -112,3 +112,7 @@ void keyboard_post_init_user(void) {
     rgb_matrix_mode_noeeprom(RGB_MATRIX_DEFAULT_MODE);
 #endif
 }
+
+bool get_speculative_hold(uint16_t keycode, keyrecord_t* record) {
+  return true;  // Enable for all mods.
+}
