@@ -70,9 +70,10 @@
 // no lights if we sleep
 #define RGB_MATRIX_SLEEP
 
-// not too bright
-#undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
+// not too bright, if not already setup
+#ifndef RGB_MATRIX_MAXIMUM_BRIGHTNESS
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100
+#endif
 
 // default mode
 #define ENABLE_RGB_MATRIX_STARLIGHT_DUAL_HUE
