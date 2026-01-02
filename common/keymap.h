@@ -26,10 +26,10 @@ enum my_tap_hold {
     CC_E = LALT_T(KC_E),
     CC_I = RALT_T(KC_I),
 
-    CC_SYM = LT(_SYM, KC_MINS),
+    CC_SYM = MO(_SYM),
     CC_NUM = LT(_NUM, KC_R),
     CC_NAV = LT(_NAV, KC_SPC),
-    CC_FUN = LT(_FUN, KC_EQL)
+    CC_FUN = MO(_FUN)
 };
 
 // our keymap
