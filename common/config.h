@@ -71,6 +71,7 @@
 #define RGB_MATRIX_SLEEP
 
 // not too bright
+#undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100
 
 // default mode
