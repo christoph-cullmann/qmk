@@ -122,14 +122,12 @@ bool get_speculative_hold(uint16_t keycode, keyrecord_t* record) {
 uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
     bool shifted = (mods & MOD_MASK_SHIFT);  // Was Shift held?
     switch (keycode) {
+        // convert: TAB => SHIFT-TAB and vice versa (indent vs. unindent)
         case KC_TAB:
-            if (shifted) {        // If the last key was Shift + Tab,
-                return KC_TAB;    // ... the reverse is Tab.
-            } else {              // Otherwise, the last key was Tab,
-                return S(KC_TAB); // ... and the reverse is Shift + Tab.
-            }
+            return shifted ? KC_TAB : S(KC_TAB);
     }
 
+    // use default alternate result
     return KC_TRNS;
 }
 
