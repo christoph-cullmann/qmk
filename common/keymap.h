@@ -26,10 +26,10 @@ enum my_tap_hold {
     CC_E = LALT_T(KC_E),
     CC_I = RALT_T(KC_I),
 
-    CC_SYM = MO(_SYM),
+    CC_SYM = LT(_SYM, KC_SPC),
     CC_NUM = LT(_NUM, KC_R),
     CC_NAV = LT(_NAV, KC_SPC),
-    CC_FUN = MO(_FUN)
+    CC_FUN = LT(_FUN, KC_SPC)
 };
 
 // our keymap
@@ -115,4 +115,57 @@ void keyboard_post_init_user(void) {
 
 bool get_speculative_hold(uint16_t keycode, keyrecord_t* record) {
   return true;  // Enable for all mods.
+}
+
+// alternate repeat key
+// see https://docs.qmk.fm/features/repeat_key#defining-alternate-keys
+uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
+    bool shifted = (mods & MOD_MASK_SHIFT);  // Was Shift held?
+    switch (keycode) {
+        case KC_TAB:
+            if (shifted) {        // If the last key was Shift + Tab,
+                return KC_TAB;    // ... the reverse is Tab.
+            } else {              // Otherwise, the last key was Tab,
+                return S(KC_TAB); // ... and the reverse is Shift + Tab.
+            }
+    }
+
+    return KC_TRNS;
+}
+
+// make repeat key work with layer switching
+// https://getreuer.info/posts/keyboards/faqs/index.html#layer-tap-repeat-key
+bool remember_last_key_user(uint16_t keycode, keyrecord_t* record,
+                            uint8_t* remembered_mods) {
+  if (keycode == CC_SYM) { return false; }
+  if (keycode == CC_FUN) { return false; }
+  return true;
+}
+
+// make repeat key work with layer switching
+// https://getreuer.info/posts/keyboards/faqs/index.html#layer-tap-repeat-key
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+  switch (keycode) {
+    // SYM layer on hold, Repeat Key on tap.
+    case CC_SYM:
+      if (record->tap.count) {
+        repeat_key_invoke(&record->event);
+        return false;
+      }
+      break;
+
+    // FUN layer on hold, Alternate Repeat Key on tap
+    case CC_FUN:
+      if (record->tap.count) {
+        alt_repeat_key_invoke(&record->event);
+        return false;
+      }
+      break;
+
+    default:
+      break;
+  }
+
+  // keep defaults on
+  return true;
 }

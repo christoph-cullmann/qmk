@@ -2,6 +2,10 @@
 # https://docs.qmk.fm/features/caps_word
 CAPS_WORD_ENABLE = yes
 
+# we use repeat and alternate repeat keys
+# https://docs.qmk.fm/features/repeat_key
+REPEAT_KEY_ENABLE = yes
+
 # Enable N-Key Rollover
 NKRO_ENABLE = yes
 
