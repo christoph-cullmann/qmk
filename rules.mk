@@ -12,9 +12,6 @@ NKRO_ENABLE = yes
 # optimize size
 LTO_ENABLE = yes
 
-# use more snappy debounce algo
-DEBOUNCE_TYPE = asym_eager_defer_pk
-
 # disable some stuff we don't need
 COMBO_ENABLE = no
 COMMAND_ENABLE = no
