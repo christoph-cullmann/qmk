@@ -36,10 +36,16 @@
 #undef LOCKING_RESYNC_ENABLE
 
 // tranfer enough info for the stuff we render on the OLEDs
+// https://docs.qmk.fm/features/split_keyboard
+#define SPLIT_ACTIVITY_ENABLE
 #define SPLIT_LAYER_STATE_ENABLE
 #define SPLIT_LED_STATE_ENABLE
 #define SPLIT_MODS_ENABLE
 #define SPLIT_OLED_ENABLE
+
+// try to ensure keyboard is properly alive
+// https://docs.qmk.fm/features/split_keyboard
+#define SPLIT_WATCHDOG_ENABLE
 
 // not more than 8 layers
 #define LAYER_STATE_8BIT
