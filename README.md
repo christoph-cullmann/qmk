@@ -7,7 +7,11 @@ night (CN) (8 likes)
   b f l k q  p g o u .
   n s h t m  y c a e i
   x v j d z  ' w ; / ,
-        r
+      ▲ r    □ ▼
+
+□ = space
+▲ = repeat key
+▼ = alternate repeat key
 
 SHAI:
   Alt: 34.36%
