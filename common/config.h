@@ -16,11 +16,6 @@
 #define TAPPING_TERM 240
 #define FLOW_TAP_TERM 100
 #define QUICK_TAP_TERM 0
-#define SPECULATIVE_HOLD
-
-#define DUMMY_MOD_NEUTRALIZER_KEYCODE KC_RCTL
-#define MODS_TO_NEUTRALIZE \
-  { MOD_BIT(KC_LALT), MOD_BIT(KC_LGUI), MOD_BIT(KC_RGUI) }
 
 // enable caps word with pressing both shifts
 // https://docs.qmk.fm/features/caps_word

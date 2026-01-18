@@ -113,10 +113,6 @@ void keyboard_post_init_user(void) {
 #endif
 }
 
-bool get_speculative_hold(uint16_t keycode, keyrecord_t* record) {
-  return true;  // Enable for all mods.
-}
-
 // alternate repeat key
 // see https://docs.qmk.fm/features/repeat_key#defining-alternate-keys
 uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
