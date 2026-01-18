@@ -12,6 +12,9 @@ NKRO_ENABLE = yes
 # optimize size
 LTO_ENABLE = yes
 
+# debounce per key, I use keyboards with not that many keys :)
+DEBOUNCE_TYPE=sym_defer_pk
+
 # disable some stuff we don't need
 COMBO_ENABLE = no
 COMMAND_ENABLE = no
