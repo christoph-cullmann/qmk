@@ -25,6 +25,18 @@
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
 
+// not more than 8 layers
+#define LAYER_STATE_8BIT
+
+// disable more not used stuff
+#define NO_ACTION_MACRO
+#define NO_ACTION_ONESHOT
+#define NO_ACTION_FUNCTION
+
+// some split keyboard only stuff
+
+#ifdef SPLIT_KEYBOARD
+
 // tranfer enough info for the stuff we render on the OLEDs
 // https://docs.qmk.fm/features/split_keyboard
 #define SPLIT_ACTIVITY_ENABLE
@@ -37,13 +49,7 @@
 // https://docs.qmk.fm/features/split_keyboard
 #define SPLIT_WATCHDOG_ENABLE
 
-// not more than 8 layers
-#define LAYER_STATE_8BIT
-
-// disable more not used stuff
-#define NO_ACTION_MACRO
-#define NO_ACTION_ONESHOT
-#define NO_ACTION_FUNCTION
+#endif
 
 //
 // RGB underglow
