@@ -6,9 +6,6 @@ CAPS_WORD_ENABLE = yes
 # https://docs.qmk.fm/features/repeat_key
 REPEAT_KEY_ENABLE = yes
 
-# Enable N-Key Rollover
-NKRO_ENABLE = yes
-
 # optimize size
 LTO_ENABLE = yes
 
