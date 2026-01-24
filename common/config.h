@@ -5,6 +5,9 @@
 
 #pragma once
 
+// try to get NKRO on per default
+#define NKRO_DEFAULT_ON true
+
 // got hit by key chatter with older switches
 // better safe than sorry
 #define DEBOUNCE 10

@@ -1,3 +1,7 @@
+# enable NKRO feature
+# still default off even if that is set
+NKRO_ENABLE = yes
+
 # we use the caps word feature
 # https://docs.qmk.fm/features/caps_word
 CAPS_WORD_ENABLE = yes
