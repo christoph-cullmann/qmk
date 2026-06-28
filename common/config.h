@@ -19,6 +19,8 @@
 #define TAPPING_TERM 240
 #define FLOW_TAP_TERM 100
 #define QUICK_TAP_TERM 0
+#define SPECULATIVE_HOLD_ONE_KEY
+#define SPECULATIVE_HOLD_FLOW_TERM 200
 
 // enable caps word with pressing both shifts
 // https://docs.qmk.fm/features/caps_word
