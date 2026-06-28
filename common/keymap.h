@@ -121,6 +121,20 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         // convert: TAB => SHIFT-TAB and vice versa (indent vs. unindent)
         case KC_TAB:
             return shifted ? KC_TAB : S(KC_TAB);
+
+        // convert: < => > and vive versa
+        case KC_COMM:
+            if (shifted)
+              return S(KC_DOT);
+            break;
+
+        case KC_DOT:
+            if (shifted)
+              return S(KC_COMM);
+            break;
+
+        default:
+            break;
     }
 
     // use default alternate result
