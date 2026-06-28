@@ -3,7 +3,7 @@
 Layout with 34 keys based on Miryoku, using Night as base layer:
 
 ```
-night (CN) (8 likes)
+night
   b f l k q  p g o u .
   n s h t m  y c a e i
   x v j d z  ' w ; / ,
