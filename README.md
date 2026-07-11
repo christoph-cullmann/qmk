@@ -40,6 +40,12 @@ You need to have a locally setup QMK and use this repo as overlay:
 qmk config user.overlay_dir="/data/home/cullmann/data/qmk/userspace"
 ```
 
+To compile the firmware for all keyboards in this userspace, use:
+
+```zsh
+qmk userspace-compile
+```
+
 To use my keymaps, one can do:
 
 Ferris Sweep
