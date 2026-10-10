@@ -16,8 +16,8 @@
 // https://github.com/getreuer/qmk-keymap/blob/main/config_getreuer.h
 #define CHORDAL_HOLD
 #define PERMISSIVE_HOLD
-#define TAPPING_TERM 240
-#define FLOW_TAP_TERM 100
+#define TAPPING_TERM 200
+#define FLOW_TAP_TERM 80
 #define QUICK_TAP_TERM 0
 #define SPECULATIVE_HOLD_ONE_KEY
 #define SPECULATIVE_HOLD_FLOW_TERM 200
